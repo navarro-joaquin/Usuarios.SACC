@@ -42,16 +42,16 @@
 			this.cessa_bdsaccDataSet = new Utilitarios.SACC.cessa_bdsaccDataSet();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.txtNombre = new System.Windows.Forms.TextBox();
-			this.txtCargo = new System.Windows.Forms.TextBox();
-			this.txtRol = new System.Windows.Forms.TextBox();
-			this.txtUbicacion = new System.Windows.Forms.TextBox();
-			this.txtEstado = new System.Windows.Forms.TextBox();
 			this.dtpCreado = new System.Windows.Forms.DateTimePicker();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.usuariosTableAdapter = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.usuariosTableAdapter();
 			this.tableAdapterManager = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager();
 			this.lblCreado = new System.Windows.Forms.Label();
+			this.cmbCargo = new System.Windows.Forms.ComboBox();
+			this.cmbRol = new System.Windows.Forms.ComboBox();
+			this.cmbUbicacion = new System.Windows.Forms.ComboBox();
+			this.cmbEstado = new System.Windows.Forms.ComboBox();
 			lblLogin = new System.Windows.Forms.Label();
 			lblPassword = new System.Windows.Forms.Label();
 			lblNombre = new System.Windows.Forms.Label();
@@ -103,7 +103,7 @@
 			// lblRol
 			// 
 			lblRol.AutoSize = true;
-			lblRol.Location = new System.Drawing.Point(12, 131);
+			lblRol.Location = new System.Drawing.Point(12, 134);
 			lblRol.Name = "lblRol";
 			lblRol.Size = new System.Drawing.Size(29, 15);
 			lblRol.TabIndex = 10;
@@ -112,7 +112,7 @@
 			// lblUbicacion
 			// 
 			lblUbicacion.AutoSize = true;
-			lblUbicacion.Location = new System.Drawing.Point(12, 158);
+			lblUbicacion.Location = new System.Drawing.Point(12, 163);
 			lblUbicacion.Name = "lblUbicacion";
 			lblUbicacion.Size = new System.Drawing.Size(65, 15);
 			lblUbicacion.TabIndex = 12;
@@ -121,7 +121,7 @@
 			// lblEstado
 			// 
 			lblEstado.AutoSize = true;
-			lblEstado.Location = new System.Drawing.Point(12, 185);
+			lblEstado.Location = new System.Drawing.Point(12, 192);
 			lblEstado.Name = "lblEstado";
 			lblEstado.Size = new System.Drawing.Size(48, 15);
 			lblEstado.TabIndex = 14;
@@ -129,6 +129,10 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.cmbEstado);
+			this.groupBox1.Controls.Add(this.cmbUbicacion);
+			this.groupBox1.Controls.Add(this.cmbRol);
+			this.groupBox1.Controls.Add(this.cmbCargo);
 			this.groupBox1.Controls.Add(this.lblCreado);
 			this.groupBox1.Controls.Add(lblLogin);
 			this.groupBox1.Controls.Add(this.txtLogin);
@@ -137,17 +141,13 @@
 			this.groupBox1.Controls.Add(lblNombre);
 			this.groupBox1.Controls.Add(this.txtNombre);
 			this.groupBox1.Controls.Add(lblCargo);
-			this.groupBox1.Controls.Add(this.txtCargo);
 			this.groupBox1.Controls.Add(lblRol);
-			this.groupBox1.Controls.Add(this.txtRol);
 			this.groupBox1.Controls.Add(lblUbicacion);
-			this.groupBox1.Controls.Add(this.txtUbicacion);
 			this.groupBox1.Controls.Add(lblEstado);
-			this.groupBox1.Controls.Add(this.txtEstado);
 			this.groupBox1.Controls.Add(this.dtpCreado);
 			this.groupBox1.Location = new System.Drawing.Point(12, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(340, 244);
+			this.groupBox1.Size = new System.Drawing.Size(344, 256);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Datos del usuario";
@@ -190,54 +190,18 @@
 			this.txtNombre.Size = new System.Drawing.Size(174, 21);
 			this.txtNombre.TabIndex = 7;
 			// 
-			// txtCargo
-			// 
-			this.txtCargo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "cargo", true));
-			this.txtCargo.Location = new System.Drawing.Point(150, 101);
-			this.txtCargo.MaxLength = 30;
-			this.txtCargo.Name = "txtCargo";
-			this.txtCargo.Size = new System.Drawing.Size(174, 21);
-			this.txtCargo.TabIndex = 9;
-			// 
-			// txtRol
-			// 
-			this.txtRol.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "rol", true));
-			this.txtRol.Location = new System.Drawing.Point(150, 128);
-			this.txtRol.MaxLength = 15;
-			this.txtRol.Name = "txtRol";
-			this.txtRol.Size = new System.Drawing.Size(174, 21);
-			this.txtRol.TabIndex = 11;
-			// 
-			// txtUbicacion
-			// 
-			this.txtUbicacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "ubicacion", true));
-			this.txtUbicacion.Location = new System.Drawing.Point(150, 155);
-			this.txtUbicacion.MaxLength = 15;
-			this.txtUbicacion.Name = "txtUbicacion";
-			this.txtUbicacion.Size = new System.Drawing.Size(174, 21);
-			this.txtUbicacion.TabIndex = 13;
-			// 
-			// txtEstado
-			// 
-			this.txtEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "estado", true));
-			this.txtEstado.Location = new System.Drawing.Point(150, 182);
-			this.txtEstado.MaxLength = 1;
-			this.txtEstado.Name = "txtEstado";
-			this.txtEstado.Size = new System.Drawing.Size(174, 21);
-			this.txtEstado.TabIndex = 15;
-			// 
 			// dtpCreado
 			// 
 			this.dtpCreado.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.usuariosBindingSource, "creado", true));
 			this.dtpCreado.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtpCreado.Location = new System.Drawing.Point(150, 209);
+			this.dtpCreado.Location = new System.Drawing.Point(150, 218);
 			this.dtpCreado.Name = "dtpCreado";
 			this.dtpCreado.Size = new System.Drawing.Size(174, 21);
 			this.dtpCreado.TabIndex = 17;
 			// 
 			// btnAgregar
 			// 
-			this.btnAgregar.Location = new System.Drawing.Point(12, 263);
+			this.btnAgregar.Location = new System.Drawing.Point(12, 274);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.Size = new System.Drawing.Size(96, 44);
 			this.btnAgregar.TabIndex = 1;
@@ -247,7 +211,7 @@
 			// 
 			// btnSalir
 			// 
-			this.btnSalir.Location = new System.Drawing.Point(256, 262);
+			this.btnSalir.Location = new System.Drawing.Point(260, 274);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(96, 44);
 			this.btnSalir.TabIndex = 2;
@@ -271,17 +235,62 @@
 			// lblCreado
 			// 
 			this.lblCreado.AutoSize = true;
-			this.lblCreado.Location = new System.Drawing.Point(12, 214);
+			this.lblCreado.Location = new System.Drawing.Point(12, 223);
 			this.lblCreado.Name = "lblCreado";
 			this.lblCreado.Size = new System.Drawing.Size(50, 15);
 			this.lblCreado.TabIndex = 18;
 			this.lblCreado.Text = "Creado:";
 			// 
+			// cmbCargo
+			// 
+			this.cmbCargo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "cargo", true));
+			this.cmbCargo.FormattingEnabled = true;
+			this.cmbCargo.Items.AddRange(new object[] {
+            "PLATAFORMA",
+            "CAJAS",
+            "RRPP",
+            "ADMINISTRADOR"});
+			this.cmbCargo.Location = new System.Drawing.Point(150, 101);
+			this.cmbCargo.Name = "cmbCargo";
+			this.cmbCargo.Size = new System.Drawing.Size(174, 23);
+			this.cmbCargo.TabIndex = 19;
+			this.cmbCargo.SelectedIndexChanged += new System.EventHandler(this.cmbCargo_SelectedIndexChanged);
+			// 
+			// cmbRol
+			// 
+			this.cmbRol.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "rol", true));
+			this.cmbRol.FormattingEnabled = true;
+			this.cmbRol.Location = new System.Drawing.Point(150, 131);
+			this.cmbRol.Name = "cmbRol";
+			this.cmbRol.Size = new System.Drawing.Size(174, 23);
+			this.cmbRol.TabIndex = 20;
+			this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
+			// 
+			// cmbUbicacion
+			// 
+			this.cmbUbicacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "ubicacion", true));
+			this.cmbUbicacion.FormattingEnabled = true;
+			this.cmbUbicacion.Location = new System.Drawing.Point(150, 160);
+			this.cmbUbicacion.Name = "cmbUbicacion";
+			this.cmbUbicacion.Size = new System.Drawing.Size(174, 23);
+			this.cmbUbicacion.TabIndex = 21;
+			// 
+			// cmbEstado
+			// 
+			this.cmbEstado.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "estado", true));
+			this.cmbEstado.FormattingEnabled = true;
+			this.cmbEstado.Items.AddRange(new object[] {
+            "1"});
+			this.cmbEstado.Location = new System.Drawing.Point(150, 189);
+			this.cmbEstado.Name = "cmbEstado";
+			this.cmbEstado.Size = new System.Drawing.Size(174, 23);
+			this.cmbEstado.TabIndex = 22;
+			// 
 			// FrmOpUsuario
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(363, 321);
+			this.ClientSize = new System.Drawing.Size(370, 330);
 			this.Controls.Add(this.btnSalir);
 			this.Controls.Add(this.btnAgregar);
 			this.Controls.Add(this.groupBox1);
@@ -307,13 +316,13 @@
 		private System.Windows.Forms.TextBox txtLogin;
 		private System.Windows.Forms.TextBox txtPassword;
 		private System.Windows.Forms.TextBox txtNombre;
-		private System.Windows.Forms.TextBox txtCargo;
-		private System.Windows.Forms.TextBox txtRol;
-		private System.Windows.Forms.TextBox txtUbicacion;
-		private System.Windows.Forms.TextBox txtEstado;
 		private System.Windows.Forms.DateTimePicker dtpCreado;
 		private System.Windows.Forms.Button btnAgregar;
 		private System.Windows.Forms.Button btnSalir;
 		private System.Windows.Forms.Label lblCreado;
+		private System.Windows.Forms.ComboBox cmbEstado;
+		private System.Windows.Forms.ComboBox cmbUbicacion;
+		private System.Windows.Forms.ComboBox cmbRol;
+		private System.Windows.Forms.ComboBox cmbCargo;
 	}
 }

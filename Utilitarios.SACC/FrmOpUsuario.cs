@@ -43,10 +43,10 @@ namespace Utilitarios.SACC
 			txtLogin.ResetText();
 			txtPassword.ResetText();
 			txtNombre.ResetText();
-			txtCargo.ResetText();
-			txtRol.ResetText();
-			txtUbicacion.ResetText();
-			txtEstado.ResetText();
+			//txtCargo.ResetText();
+			//txtRol.ResetText();
+			//txtUbicacion.ResetText();
+			//txtEstado.ResetText();
 		}
 
 		public void OcultarPassword()
@@ -60,15 +60,15 @@ namespace Utilitarios.SACC
 		{	
 			if (a_modificar < 0)
 			{
-				if (txtLogin.Text != "" && txtPassword.Text != "" && txtNombre.Text != "" && txtCargo.Text != "" && txtRol.Text != "" && txtUbicacion.Text != "" && txtEstado.Text != "")
+				if (txtLogin.Text != "" && txtPassword.Text != "" && txtNombre.Text != "" && cmbCargo.Text != "" && cmbRol.Text != "" && cmbUbicacion.Text != "" && cmbEstado.Text != "")
 				{
 					string login = txtLogin.Text;
 					string password = SHA1Class.GetSHA1(txtPassword.Text);
 					string nombre = txtNombre.Text;
-					string cargo = txtCargo.Text;
-					string rol = txtRol.Text;
-					string ubicacion = txtUbicacion.Text;
-					string estado = txtEstado.Text;
+					string cargo = cmbCargo.Text;
+					string rol = cmbRol.Text;
+					string ubicacion = cmbUbicacion.Text;
+					string estado = cmbEstado.Text;
 					DateTime creado = dtpCreado.Value;
 
 					try
@@ -89,14 +89,14 @@ namespace Utilitarios.SACC
 			}
 			else
 			{
-				if (txtLogin.Text != "" && txtPassword.Text != "" && txtNombre.Text != "" && txtCargo.Text != "" && txtRol.Text != "" && txtUbicacion.Text != "" && txtEstado.Text != "")
+				if (txtLogin.Text != "" && txtPassword.Text != "" && txtNombre.Text != "" && cmbCargo.Text != "" && cmbRol.Text != "" && cmbUbicacion.Text != "" && cmbEstado.Text != "")
 				{
 					string login = txtLogin.Text;
 					string nombre = txtNombre.Text;
-					string cargo = txtCargo.Text;
-					string rol = txtRol.Text;
-					string ubicacion = txtUbicacion.Text;
-					string estado = txtEstado.Text;
+					string cargo = cmbCargo.Text;
+					string rol = cmbRol.Text;
+					string ubicacion = cmbUbicacion.Text;
+					string estado = cmbEstado.Text;
 					DateTime creado = dtpCreado.Value;
 
 					try
@@ -121,6 +121,66 @@ namespace Utilitarios.SACC
 		private void btnSalir_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			switch (cmbCargo.SelectedIndex)
+			{
+				case 0:
+					cmbRol.Items.Clear();
+					cmbRol.Items.Add("PLATAFORMA");
+					cmbRol.SelectedIndex = 0;
+					break;
+				case 1:
+					cmbRol.Items.Clear();
+					cmbRol.Items.Add("CAJAS");
+					cmbRol.SelectedIndex = 0;
+					break;
+				case 2:
+					cmbRol.Items.Clear();
+					cmbRol.Items.Add("RRPP");
+					cmbRol.SelectedIndex = 0;
+					break;
+				case 3:
+					cmbRol.Items.Clear();
+					cmbRol.Items.Add("ADMINISTRADOR");
+					cmbRol.SelectedIndex = 0;
+					break;
+			}
+		}
+
+		private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			switch (cmbRol.SelectedItem.ToString())
+			{
+				case "PLATAFORMA":
+					cmbUbicacion.Items.Clear();
+					cmbUbicacion.Items.Add("PLT1");
+					cmbUbicacion.Items.Add("PLT2");
+					cmbUbicacion.Items.Add("PLT3");
+					cmbUbicacion.Items.Add("PLT4");
+					cmbUbicacion.SelectedIndex = 0;
+					break;
+				case "CAJAS":
+					cmbUbicacion.Items.Clear();
+					cmbUbicacion.Items.Add("Caja1");
+					cmbUbicacion.Items.Add("Caja2");
+					cmbUbicacion.Items.Add("Caja3");
+					cmbUbicacion.Items.Add("Caja4");
+					cmbUbicacion.SelectedIndex = 0;
+					break;
+				case "RRPP":
+					cmbUbicacion.Items.Clear();
+					cmbUbicacion.Items.Add("RRPP");
+					cmbUbicacion.SelectedIndex = 0;
+					break;
+				case "ADMINISTRADOR":
+					cmbUbicacion.Items.Clear();
+					cmbUbicacion.Items.Add("ADMINISTRADOR");
+					cmbUbicacion.SelectedIndex = 0;
+					break;
+			}
 		}
 	}
 }
