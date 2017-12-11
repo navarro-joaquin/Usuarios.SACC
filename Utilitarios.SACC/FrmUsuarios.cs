@@ -67,17 +67,17 @@ namespace Utilitarios.SACC
 
 		private void btnResetPassword_Click(object sender, EventArgs e)
 		{
-			if (dgvUsuarios.SelectedRows.Count != 0)
-			{
-				int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
-				FrmPasswordUsuario resetPassword = new FrmPasswordUsuario(id);
-				resetPassword.FormClosed += new FormClosedEventHandler(resetPassword_FormClosed);
-				resetPassword.ShowDialog();
-			}
-			else
-			{
-				MessageBox.Show("Debe seleccionar una fila");
-			}
-		}
+            if (dgvUsuarios.SelectedRows.Count != 0)
+            {
+                int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
+                FrmPasswordUsuario resetPassword = new FrmPasswordUsuario(id);
+                resetPassword.FormClosed += new FormClosedEventHandler(resetPassword_FormClosed);
+                resetPassword.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila");
+            }
+        }
 	}
 }

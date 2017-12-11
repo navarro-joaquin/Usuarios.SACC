@@ -20,17 +20,17 @@ namespace Utilitarios.SACC
 			{
 				case "ADMINISTRADOR":
 					btnUsuarios.Enabled = true;
-					btnMensajes.Enabled = true;
+					btnAvisos.Enabled = true;
 					btnVideos.Enabled = true;
 					break;
 				case "RRPP":
 					btnUsuarios.Enabled = false;
-					btnMensajes.Enabled = true;
+					btnAvisos.Enabled = true;
 					btnVideos.Enabled = false;
 					break;
 				default:
 					btnUsuarios.Enabled = false;
-					btnMensajes.Enabled = false;
+					btnAvisos.Enabled = false;
 					btnVideos.Enabled = false;
 					break;
 			}
@@ -50,5 +50,21 @@ namespace Utilitarios.SACC
 			usuarios.ShowDialog();
 			this.Show();
 		}
-	}
+
+		private void btnAvisos_Click(object sender, EventArgs e)
+		{
+			FrmAvisos avisos = new FrmAvisos(id_usuario);
+			this.Hide();
+			avisos.ShowDialog();
+			this.Show();
+		}
+
+        private void btnVideos_Click(object sender, EventArgs e)
+        {
+            FrmVideosFTP videos = new FrmVideosFTP();
+            this.Hide();
+            videos.ShowDialog();
+            this.Show();
+        }
+    }
 }

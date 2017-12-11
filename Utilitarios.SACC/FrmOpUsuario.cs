@@ -53,7 +53,6 @@ namespace Utilitarios.SACC
 		{
 			txtPassword.Enabled = false;
 			btnAgregar.Text = "Modificar";
-			lblCreado.Text = "Modificado:";
 		}
 
 		private void btnAgregar_Click(object sender, EventArgs e)
@@ -69,7 +68,7 @@ namespace Utilitarios.SACC
 					string rol = cmbRol.Text;
 					string ubicacion = cmbUbicacion.Text;
 					string estado = cmbEstado.Text;
-					DateTime creado = dtpCreado.Value;
+                    DateTime creado = DateTime.Today;
 
 					try
 					{
@@ -97,11 +96,11 @@ namespace Utilitarios.SACC
 					string rol = cmbRol.Text;
 					string ubicacion = cmbUbicacion.Text;
 					string estado = cmbEstado.Text;
-					DateTime creado = dtpCreado.Value;
+					DateTime modificado = DateTime.Today;
 
 					try
 					{
-						this.usuariosTableAdapter.updateUsuario(login, nombre, cargo, rol, ubicacion, estado, creado, id_usuario, a_modificar);
+						this.usuariosTableAdapter.updateUsuario(login, nombre, cargo, rol, ubicacion, estado, modificado, id_usuario, a_modificar);
 						MessageBox.Show("Modificado correctamente");
 						this.Close();
 					}

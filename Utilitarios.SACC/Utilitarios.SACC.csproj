@@ -48,16 +48,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cessa_bdsaccDataSet.cs">
+      <DependentUpon>cessa_bdsaccDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="cessa_bdsaccDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>cessa_bdsaccDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ClaseFTP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClaseFTP.Designer.cs">
+      <DependentUpon>ClaseFTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAvisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAvisos.Designer.cs">
+      <DependentUpon>FrmAvisos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOpAviso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOpAviso.Designer.cs">
+      <DependentUpon>FrmOpAviso.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOpUsuario.cs">
       <SubType>Form</SubType>
@@ -83,11 +104,30 @@
     <Compile Include="FrmUsuarios.Designer.cs">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmVIdeos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVIdeos.Designer.cs">
+      <DependentUpon>FrmVIdeos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVideosFTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVideosFTP.Designer.cs">
+      <DependentUpon>FrmVideosFTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fuentes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SHA1Class.cs" />
+    <EmbeddedResource Include="FrmAvisos.resx">
+      <DependentUpon>FrmAvisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOpAviso.resx">
+      <DependentUpon>FrmOpAviso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOpUsuario.resx">
       <DependentUpon>FrmOpUsuario.cs</DependentUpon>
@@ -100,6 +140,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarios.resx">
       <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVIdeos.resx">
+      <DependentUpon>FrmVIdeos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVideosFTP.resx">
+      <DependentUpon>FrmVideosFTP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,6 +168,9 @@
     <None Include="cessa_bdsaccDataSet.xss">
       <DependentUpon>cessa_bdsaccDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Fonts\Dosis-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,6 +180,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Fonts\Roboto-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
