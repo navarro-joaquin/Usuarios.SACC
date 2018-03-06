@@ -65,63 +65,63 @@
             // lblLogin
             // 
             lblLogin.AutoSize = true;
-            lblLogin.Location = new System.Drawing.Point(14, 25);
+            lblLogin.Location = new System.Drawing.Point(14, 28);
             lblLogin.Name = "lblLogin";
-            lblLogin.Size = new System.Drawing.Size(47, 16);
+            lblLogin.Size = new System.Drawing.Size(46, 18);
             lblLogin.TabIndex = 2;
             lblLogin.Text = "Login:";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new System.Drawing.Point(14, 53);
+            lblPassword.Location = new System.Drawing.Point(367, 28);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new System.Drawing.Size(88, 16);
+            lblPassword.Size = new System.Drawing.Size(82, 18);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Contraseña:";
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Location = new System.Drawing.Point(14, 82);
+            lblNombre.Location = new System.Drawing.Point(14, 67);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new System.Drawing.Size(62, 16);
+            lblNombre.Size = new System.Drawing.Size(61, 18);
             lblNombre.TabIndex = 6;
             lblNombre.Text = "Nombre:";
             // 
             // lblCargo
             // 
             lblCargo.AutoSize = true;
-            lblCargo.Location = new System.Drawing.Point(14, 111);
+            lblCargo.Location = new System.Drawing.Point(14, 107);
             lblCargo.Name = "lblCargo";
-            lblCargo.Size = new System.Drawing.Size(51, 16);
+            lblCargo.Size = new System.Drawing.Size(48, 18);
             lblCargo.TabIndex = 8;
             lblCargo.Text = "Cargo:";
             // 
             // lblRol
             // 
             lblRol.AutoSize = true;
-            lblRol.Location = new System.Drawing.Point(14, 143);
+            lblRol.Location = new System.Drawing.Point(367, 110);
             lblRol.Name = "lblRol";
-            lblRol.Size = new System.Drawing.Size(33, 16);
+            lblRol.Size = new System.Drawing.Size(32, 18);
             lblRol.TabIndex = 10;
             lblRol.Text = "Rol:";
             // 
             // lblUbicacion
             // 
             lblUbicacion.AutoSize = true;
-            lblUbicacion.Location = new System.Drawing.Point(14, 174);
+            lblUbicacion.Location = new System.Drawing.Point(14, 152);
             lblUbicacion.Name = "lblUbicacion";
-            lblUbicacion.Size = new System.Drawing.Size(73, 16);
+            lblUbicacion.Size = new System.Drawing.Size(74, 18);
             lblUbicacion.TabIndex = 12;
             lblUbicacion.Text = "Ubicación:";
             // 
             // lblEstado
             // 
             lblEstado.AutoSize = true;
-            lblEstado.Location = new System.Drawing.Point(14, 205);
+            lblEstado.Location = new System.Drawing.Point(367, 154);
             lblEstado.Name = "lblEstado";
-            lblEstado.Size = new System.Drawing.Size(57, 16);
+            lblEstado.Size = new System.Drawing.Size(53, 18);
             lblEstado.TabIndex = 14;
             lblEstado.Text = "Estado:";
             // 
@@ -141,9 +141,9 @@
             this.groupBox1.Controls.Add(lblRol);
             this.groupBox1.Controls.Add(lblUbicacion);
             this.groupBox1.Controls.Add(lblEstado);
-            this.groupBox1.Location = new System.Drawing.Point(14, 13);
+            this.groupBox1.Location = new System.Drawing.Point(14, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 242);
+            this.groupBox1.Size = new System.Drawing.Size(673, 195);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del usuario";
@@ -154,9 +154,9 @@
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "1"});
-            this.cmbEstado.Location = new System.Drawing.Point(171, 202);
+            this.cmbEstado.Location = new System.Drawing.Point(470, 148);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(198, 24);
+            this.cmbEstado.Size = new System.Drawing.Size(146, 26);
             this.cmbEstado.TabIndex = 22;
             // 
             // usuariosBindingSource
@@ -173,18 +173,18 @@
             // 
             this.cmbUbicacion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "ubicacion", true));
             this.cmbUbicacion.FormattingEnabled = true;
-            this.cmbUbicacion.Location = new System.Drawing.Point(171, 171);
+            this.cmbUbicacion.Location = new System.Drawing.Point(130, 146);
             this.cmbUbicacion.Name = "cmbUbicacion";
-            this.cmbUbicacion.Size = new System.Drawing.Size(198, 24);
+            this.cmbUbicacion.Size = new System.Drawing.Size(146, 26);
             this.cmbUbicacion.TabIndex = 21;
             // 
             // cmbRol
             // 
             this.cmbRol.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "rol", true));
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(171, 140);
+            this.cmbRol.Location = new System.Drawing.Point(470, 105);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(198, 24);
+            this.cmbRol.Size = new System.Drawing.Size(146, 26);
             this.cmbRol.TabIndex = 20;
             this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
@@ -197,45 +197,45 @@
             "CAJAS",
             "RRPP",
             "ADMINISTRADOR"});
-            this.cmbCargo.Location = new System.Drawing.Point(171, 108);
+            this.cmbCargo.Location = new System.Drawing.Point(130, 102);
             this.cmbCargo.Name = "cmbCargo";
-            this.cmbCargo.Size = new System.Drawing.Size(198, 24);
+            this.cmbCargo.Size = new System.Drawing.Size(146, 26);
             this.cmbCargo.TabIndex = 19;
             this.cmbCargo.SelectedIndexChanged += new System.EventHandler(this.cmbCargo_SelectedIndexChanged);
             // 
             // txtLogin
             // 
             this.txtLogin.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "login", true));
-            this.txtLogin.Location = new System.Drawing.Point(171, 21);
+            this.txtLogin.Location = new System.Drawing.Point(130, 22);
             this.txtLogin.MaxLength = 30;
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(198, 23);
+            this.txtLogin.Size = new System.Drawing.Size(181, 23);
             this.txtLogin.TabIndex = 3;
             // 
             // txtPassword
             // 
             this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "password", true));
-            this.txtPassword.Location = new System.Drawing.Point(171, 50);
+            this.txtPassword.Location = new System.Drawing.Point(470, 22);
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(198, 23);
+            this.txtPassword.Size = new System.Drawing.Size(181, 23);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "nombre", true));
-            this.txtNombre.Location = new System.Drawing.Point(171, 79);
+            this.txtNombre.Location = new System.Drawing.Point(130, 62);
             this.txtNombre.MaxLength = 60;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(198, 23);
+            this.txtNombre.Size = new System.Drawing.Size(217, 23);
             this.txtNombre.TabIndex = 7;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(14, 261);
+            this.btnAgregar.Location = new System.Drawing.Point(164, 226);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(110, 47);
+            this.btnAgregar.Size = new System.Drawing.Size(110, 40);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -243,9 +243,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(297, 261);
+            this.btnSalir.Location = new System.Drawing.Point(409, 226);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(110, 47);
+            this.btnSalir.Size = new System.Drawing.Size(110, 40);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -266,13 +266,13 @@
             // 
             // FrmOpUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 321);
+            this.ClientSize = new System.Drawing.Size(703, 283);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmOpUsuario";
             this.Text = "FrmOpUsuario";
             this.Load += new System.EventHandler(this.FrmOpUsuario_Load);

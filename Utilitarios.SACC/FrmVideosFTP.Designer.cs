@@ -61,22 +61,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 28);
+            this.label1.Location = new System.Drawing.Point(22, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.Size = new System.Drawing.Size(65, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Servidor:";
             // 
             // txtServidor
             // 
-            this.txtServidor.Location = new System.Drawing.Point(109, 25);
+            this.txtServidor.Location = new System.Drawing.Point(109, 30);
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(136, 23);
             this.txtServidor.TabIndex = 1;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(109, 57);
+            this.txtUsuario.Location = new System.Drawing.Point(109, 66);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(136, 23);
             this.txtUsuario.TabIndex = 3;
@@ -84,15 +84,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 60);
+            this.label2.Location = new System.Drawing.Point(22, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.Size = new System.Drawing.Size(60, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Usuario:";
             // 
             // txtContrasena
             // 
-            this.txtContrasena.Location = new System.Drawing.Point(109, 89);
+            this.txtContrasena.Location = new System.Drawing.Point(369, 66);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(136, 23);
             this.txtContrasena.TabIndex = 5;
@@ -101,24 +101,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 92);
+            this.label3.Location = new System.Drawing.Point(265, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.Size = new System.Drawing.Size(82, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Contraseña:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(265, 28);
+            this.label4.Location = new System.Drawing.Point(265, 32);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 16);
+            this.label4.Size = new System.Drawing.Size(54, 18);
             this.label4.TabIndex = 6;
             this.label4.Text = "Puerto:";
             // 
             // txtPuerto
             // 
-            this.txtPuerto.Location = new System.Drawing.Point(328, 25);
+            this.txtPuerto.Location = new System.Drawing.Point(369, 30);
             this.txtPuerto.Name = "txtPuerto";
             this.txtPuerto.Size = new System.Drawing.Size(47, 23);
             this.txtPuerto.TabIndex = 7;
@@ -134,9 +134,9 @@
             this.groupBox1.Controls.Add(this.txtContrasena);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(390, 127);
+            this.groupBox1.Size = new System.Drawing.Size(524, 113);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la Conexión";
@@ -148,18 +148,18 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtCarpetaDestino);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(12, 145);
+            this.groupBox2.Location = new System.Drawing.Point(12, 133);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(390, 100);
+            this.groupBox2.Size = new System.Drawing.Size(524, 101);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Archivo";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(337, 53);
+            this.btnBuscar.Location = new System.Drawing.Point(480, 56);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(38, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(38, 26);
             this.btnBuscar.TabIndex = 4;
             this.btnBuscar.Text = "...";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -167,33 +167,33 @@
             // 
             // txtArchivo
             // 
-            this.txtArchivo.Location = new System.Drawing.Point(139, 54);
+            this.txtArchivo.Location = new System.Drawing.Point(155, 57);
             this.txtArchivo.Name = "txtArchivo";
-            this.txtArchivo.Size = new System.Drawing.Size(191, 23);
+            this.txtArchivo.Size = new System.Drawing.Size(306, 23);
             this.txtArchivo.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 57);
+            this.label6.Location = new System.Drawing.Point(22, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 16);
+            this.label6.Size = new System.Drawing.Size(107, 18);
             this.label6.TabIndex = 2;
             this.label6.Text = "Archivo a subir:";
             // 
             // txtCarpetaDestino
             // 
-            this.txtCarpetaDestino.Location = new System.Drawing.Point(139, 22);
+            this.txtCarpetaDestino.Location = new System.Drawing.Point(156, 22);
             this.txtCarpetaDestino.Name = "txtCarpetaDestino";
-            this.txtCarpetaDestino.Size = new System.Drawing.Size(191, 23);
+            this.txtCarpetaDestino.Size = new System.Drawing.Size(163, 23);
             this.txtCarpetaDestino.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 25);
+            this.label5.Location = new System.Drawing.Point(22, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 16);
+            this.label5.Size = new System.Drawing.Size(110, 18);
             this.label5.TabIndex = 0;
             this.label5.Text = "Carpeta Destino:";
             // 
@@ -202,16 +202,16 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripProgressBar1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 297);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 302);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(415, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(549, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(400, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(534, 17);
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = "Listo";
             this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,14 +219,14 @@
             // toolStripProgressBar1
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(300, 16);
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(300, 18);
             this.toolStripProgressBar1.Visible = false;
             // 
             // btnSubir
             // 
-            this.btnSubir.Location = new System.Drawing.Point(13, 252);
+            this.btnSubir.Location = new System.Drawing.Point(140, 250);
             this.btnSubir.Name = "btnSubir";
-            this.btnSubir.Size = new System.Drawing.Size(102, 42);
+            this.btnSubir.Size = new System.Drawing.Size(91, 33);
             this.btnSubir.TabIndex = 3;
             this.btnSubir.Text = "Subir";
             this.btnSubir.UseVisualStyleBackColor = true;
@@ -249,9 +249,9 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(300, 251);
+            this.btnCerrar.Location = new System.Drawing.Point(304, 250);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(102, 42);
+            this.btnCerrar.Size = new System.Drawing.Size(91, 33);
             this.btnCerrar.TabIndex = 4;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -259,15 +259,15 @@
             // 
             // FrmVideosFTP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 319);
+            this.ClientSize = new System.Drawing.Size(549, 324);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnSubir);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmVideosFTP";
             this.Text = "FrmVideosFTP";

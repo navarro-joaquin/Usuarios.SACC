@@ -31,12 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvAvisos = new System.Windows.Forms.DataGridView();
-            this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cessa_bdsaccDataSet = new Utilitarios.SACC.cessa_bdsaccDataSet();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.mensajesTableAdapter = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.mensajesTableAdapter();
-            this.tableAdapterManager = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager();
-            this.btnModificar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +39,12 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mensajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cessa_bdsaccDataSet = new Utilitarios.SACC.cessa_bdsaccDataSet();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.mensajesTableAdapter = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.mensajesTableAdapter();
+            this.tableAdapterManager = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager();
+            this.btnModificar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvisos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mensajesBindingSource)).BeginInit();
@@ -57,9 +57,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvAvisos);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(640, 336);
+            this.groupBox1.Size = new System.Drawing.Size(754, 378);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de avisos";
@@ -74,6 +74,7 @@
             this.dgvAvisos.AutoGenerateColumns = false;
             this.dgvAvisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvAvisos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dgvAvisos.BackgroundColor = System.Drawing.Color.White;
             this.dgvAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAvisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -85,56 +86,11 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dgvAvisos.DataSource = this.mensajesBindingSource;
-            this.dgvAvisos.Location = new System.Drawing.Point(6, 21);
+            this.dgvAvisos.Location = new System.Drawing.Point(6, 24);
             this.dgvAvisos.Name = "dgvAvisos";
             this.dgvAvisos.ReadOnly = true;
-            this.dgvAvisos.Size = new System.Drawing.Size(628, 305);
+            this.dgvAvisos.Size = new System.Drawing.Size(742, 343);
             this.dgvAvisos.TabIndex = 0;
-            // 
-            // mensajesBindingSource
-            // 
-            this.mensajesBindingSource.DataMember = "mensajes";
-            this.mensajesBindingSource.DataSource = this.cessa_bdsaccDataSet;
-            // 
-            // cessa_bdsaccDataSet
-            // 
-            this.cessa_bdsaccDataSet.DataSetName = "cessa_bdsaccDataSet";
-            this.cessa_bdsaccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnNuevo.Location = new System.Drawing.Point(12, 355);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(100, 43);
-            this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.Text = "Nuevo Aviso";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // mensajesTableAdapter
-            // 
-            this.mensajesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.mensajesTableAdapter = this.mensajesTableAdapter;
-            this.tableAdapterManager.ticketsTableAdapter = null;
-            this.tableAdapterManager.tiposTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usuariosTableAdapter = null;
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(118, 355);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(106, 43);
-            this.btnModificar.TabIndex = 2;
-            this.btnModificar.Text = "Modificar Aviso";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -160,7 +116,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Fecha de inicio";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 82;
+            this.dataGridViewTextBoxColumn3.Width = 111;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -168,7 +124,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Fecha de conclusión";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 135;
+            this.dataGridViewTextBoxColumn4.Width = 136;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -184,7 +140,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Modificado";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 94;
+            this.dataGridViewTextBoxColumn6.Width = 97;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -192,7 +148,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Usuario Creador";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 115;
+            this.dataGridViewTextBoxColumn7.Width = 116;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -200,17 +156,62 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Usuario Modificador";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 133;
+            this.dataGridViewTextBoxColumn8.Width = 137;
+            // 
+            // mensajesBindingSource
+            // 
+            this.mensajesBindingSource.DataMember = "mensajes";
+            this.mensajesBindingSource.DataSource = this.cessa_bdsaccDataSet;
+            // 
+            // cessa_bdsaccDataSet
+            // 
+            this.cessa_bdsaccDataSet.DataSetName = "cessa_bdsaccDataSet";
+            this.cessa_bdsaccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnNuevo.Location = new System.Drawing.Point(12, 399);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(100, 48);
+            this.btnNuevo.TabIndex = 1;
+            this.btnNuevo.Text = "Nuevo Aviso";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // mensajesTableAdapter
+            // 
+            this.mensajesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.mensajesTableAdapter = this.mensajesTableAdapter;
+            this.tableAdapterManager.ticketsTableAdapter = null;
+            this.tableAdapterManager.tiposTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usuariosTableAdapter = null;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Location = new System.Drawing.Point(118, 399);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(106, 48);
+            this.btnModificar.TabIndex = 2;
+            this.btnModificar.Text = "Modificar Aviso";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // FrmAvisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(664, 411);
+            this.ClientSize = new System.Drawing.Size(778, 462);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmAvisos";
             this.Text = "FrmAvisos";
             this.Load += new System.EventHandler(this.FrmAvisos_Load);

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="consultasDataSet" targetNamespace="http://tempuri.org/consultasDataSet.xsd" xmlns:mstns="http://tempuri.org/consultasDataSet.xsd" xmlns="http://tempuri.org/consultasDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="consultasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="consultasDataSet" msprop:Generator_UserDSName="consultasDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Busqueda" msprop:Generator_TableClassName="BusquedaDataTable" msprop:Generator_TableVarName="tableBusqueda" msprop:Generator_RowChangedName="BusquedaRowChanged" msprop:Generator_TablePropName="Busqueda" msprop:Generator_RowDeletingName="BusquedaRowDeleting" msprop:Generator_RowChangingName="BusquedaRowChanging" msprop:Generator_RowEvHandlerName="BusquedaRowChangeEventHandler" msprop:Generator_RowDeletedName="BusquedaRowDeleted" msprop:Generator_RowClassName="BusquedaRow" msprop:Generator_UserTableName="Busqueda" msprop:Generator_RowEvArgName="BusquedaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="login" msprop:Generator_ColumnVarNameInTable="columnlogin" msprop:Generator_ColumnPropNameInRow="login" msprop:Generator_ColumnPropNameInTable="loginColumn" msprop:Generator_UserColumnName="login" type="xs:string" minOccurs="0" />
+              <xs:element name="ubicacion" msprop:Generator_ColumnVarNameInTable="columnubicacion" msprop:Generator_ColumnPropNameInRow="ubicacion" msprop:Generator_ColumnPropNameInTable="ubicacionColumn" msprop:Generator_UserColumnName="ubicacion" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_solicitud" msprop:Generator_ColumnVarNameInTable="columnfecha_solicitud" msprop:Generator_ColumnPropNameInRow="fecha_solicitud" msprop:Generator_ColumnPropNameInTable="fecha_solicitudColumn" msprop:Generator_UserColumnName="fecha_solicitud" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Ticket" msprop:Generator_ColumnVarNameInTable="columnTicket" msprop:Generator_ColumnPropNameInRow="Ticket" msprop:Generator_ColumnPropNameInTable="TicketColumn" msprop:Generator_UserColumnName="Ticket" type="xs:string" minOccurs="0" />
+              <xs:element name="hora_atencion" msprop:Generator_ColumnVarNameInTable="columnhora_atencion" msprop:Generator_ColumnPropNameInRow="hora_atencion" msprop:Generator_ColumnPropNameInTable="hora_atencionColumn" msprop:Generator_UserColumnName="hora_atencion" type="xs:duration" minOccurs="0" />
+              <xs:element name="hora_conclusion" msprop:Generator_ColumnVarNameInTable="columnhora_conclusion" msprop:Generator_ColumnPropNameInRow="hora_conclusion" msprop:Generator_ColumnPropNameInTable="hora_conclusionColumn" msprop:Generator_UserColumnName="hora_conclusion" type="xs:duration" minOccurs="0" />
+              <xs:element name="TiempoAtencion" msprop:Generator_ColumnVarNameInTable="columnTiempoAtencion" msprop:Generator_ColumnPropNameInRow="TiempoAtencion" msprop:Generator_ColumnPropNameInTable="TiempoAtencionColumn" msprop:Generator_UserColumnName="TiempoAtencion" type="xs:duration" minOccurs="0" />
+              <xs:element name="TiempoAtencionPromedio" msprop:Generator_ColumnVarNameInTable="columnTiempoAtencionPromedio" msprop:Generator_ColumnPropNameInRow="TiempoAtencionPromedio" msprop:Generator_ColumnPropNameInTable="TiempoAtencionPromedioColumn" msprop:Generator_UserColumnName="TiempoAtencionPromedio" type="xs:duration" minOccurs="0" />
+              <xs:element name="TotalAtendidos" msprop:Generator_ColumnVarNameInTable="columnTotalAtendidos" msprop:Generator_ColumnPropNameInRow="TotalAtendidos" msprop:Generator_ColumnPropNameInTable="TotalAtendidosColumn" msprop:Generator_UserColumnName="TotalAtendidos" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

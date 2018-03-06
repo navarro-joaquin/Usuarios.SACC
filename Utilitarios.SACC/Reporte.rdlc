@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Usuarios registrados en el sistema</Value>
+                <Style>
+                  <FontFamily>trebuchet MS</FontFamily>
+                  <FontSize>28pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>0.34078cm</Top>
+        <Left>1.67639cm</Left>
+        <Height>1.66688cm</Height>
+        <Width>15.99778cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Color>Black</Color>
+            <Style>Solid</Style>
+            <Width>2pt</Width>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Image2">
+        <Source>Embedded</Source>
+        <Value>logo_cessa</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>0.50766cm</Top>
+        <Height>1.5cm</Height>
+        <Width>1.5cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>3.47067cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>6.24879cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4.66129cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.01932cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.87781cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Usuario</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Nombre</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Cargo</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Ubicación</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.87781cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="login">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!login.Value</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>login</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="nombre">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!nombre.Value</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>nombre</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="cargo">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!cargo.Value</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>cargo</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="ubicacion">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!ubicacion.Value</Value>
+                              <Style>
+                                <FontFamily>trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>ubicacion</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Detalles" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>usuarios_cessabd</DataSetName>
+        <Top>2.40453cm</Top>
+        <Left>0.2741cm</Left>
+        <Height>1.75562cm</Height>
+        <Width>17.40007cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>2.09375in</Height>
+    <Style />
+  </Body>
+  <Width>7.04675in</Width>
+  <Page>
+    <PageHeight>21.59cm</PageHeight>
+    <PageWidth>27.94cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="cessa_bdsaccDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>2ede04bd-d742-4b57-be47-9da33a83b5f7</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="usuarios_cessabd">
+      <Query>
+        <DataSourceName>cessa_bdsaccDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="id">
+          <DataField>id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="login">
+          <DataField>login</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="password">
+          <DataField>password</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nombre">
+          <DataField>nombre</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cargo">
+          <DataField>cargo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rol">
+          <DataField>rol</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ubicacion">
+          <DataField>ubicacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="estado">
+          <DataField>estado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="creado">
+          <DataField>creado</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="modificado">
+          <DataField>modificado</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="usuario_creador_id">
+          <DataField>usuario_creador_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="usuario_modificador_id">
+          <DataField>usuario_modificador_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>cessa_bdsaccDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\acer\Documents\Visual Studio 2017\Projects\Utilitarios.SACC\Utilitarios.SACC\cessa_bdsaccDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>usuarios</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>usuariosTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_cessa">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>1b28e01a-e496-45fe-a1ab-2fd1fc419402</rd:ReportID>
+</Report>

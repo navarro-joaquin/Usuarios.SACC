@@ -79,5 +79,11 @@ namespace Utilitarios.SACC
                 MessageBox.Show("Debe seleccionar una fila");
             }
         }
-	}
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReporteUsuario reporte = new FrmReporteUsuario();
+            reporte.ShowDialog();
+        }
+    }
 }

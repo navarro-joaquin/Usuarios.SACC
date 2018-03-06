@@ -45,16 +45,16 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.lblPassword);
-            this.groupBox1.Location = new System.Drawing.Point(15, 14);
+            this.groupBox1.Location = new System.Drawing.Point(15, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(362, 97);
+            this.groupBox1.Size = new System.Drawing.Size(362, 119);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Introduzca su nueva contraseña";
+            this.groupBox1.Text = "Introduzca la nueva contraseña";
             // 
             // txtConfirmacion
             // 
-            this.txtConfirmacion.Location = new System.Drawing.Point(159, 53);
+            this.txtConfirmacion.Location = new System.Drawing.Point(157, 70);
             this.txtConfirmacion.MaxLength = 30;
             this.txtConfirmacion.Name = "txtConfirmacion";
             this.txtConfirmacion.Size = new System.Drawing.Size(185, 23);
@@ -64,15 +64,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 57);
+            this.label1.Location = new System.Drawing.Point(6, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 16);
+            this.label1.Size = new System.Drawing.Size(95, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Confirmación:";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(159, 19);
+            this.txtPassword.Location = new System.Drawing.Point(157, 31);
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(185, 23);
@@ -82,17 +82,17 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(8, 22);
+            this.lblPassword.Location = new System.Drawing.Point(6, 35);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(131, 16);
+            this.lblPassword.Size = new System.Drawing.Size(123, 18);
             this.lblPassword.TabIndex = 0;
             this.lblPassword.Text = "Nueva contraseña:";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(15, 118);
+            this.btnAceptar.Location = new System.Drawing.Point(15, 149);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(106, 46);
+            this.btnAceptar.Size = new System.Drawing.Size(106, 40);
             this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -100,9 +100,9 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(271, 118);
+            this.btnSalir.Location = new System.Drawing.Point(271, 149);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(106, 46);
+            this.btnSalir.Size = new System.Drawing.Size(106, 40);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -114,13 +114,13 @@
             // 
             // FrmPasswordUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 179);
+            this.ClientSize = new System.Drawing.Size(392, 201);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmPasswordUsuario";
             this.Text = "FrmPasswordUsuario";
             this.Load += new System.EventHandler(this.FrmPasswordUsuario_Load);

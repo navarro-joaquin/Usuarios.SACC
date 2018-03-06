@@ -460,6 +460,14 @@
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="listUsersForReport" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="listUsersForReport" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="listUsersForReport">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT `id`, `login`, `password`, `nombre`, `cargo`, `rol`, `ubicacion`, `estado`, `creado`, `modificado`, `usuario_creador_id`, `usuario_modificador_id` FROM `usuarios` ORDER BY `cargo`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="listUsersOrderById" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="listUsersOrderById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="listUsersOrderById">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -518,7 +526,7 @@
   <xs:element name="cessa_bdsaccDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="cessa_bdsaccDataSet" msprop:Generator_UserDSName="cessa_bdsaccDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="mensajes" msprop:Generator_TableClassName="mensajesDataTable" msprop:Generator_TableVarName="tablemensajes" msprop:Generator_TablePropName="mensajes" msprop:Generator_RowDeletingName="mensajesRowDeleting" msprop:Generator_RowChangingName="mensajesRowChanging" msprop:Generator_RowEvHandlerName="mensajesRowChangeEventHandler" msprop:Generator_RowDeletedName="mensajesRowDeleted" msprop:Generator_UserTableName="mensajes" msprop:Generator_RowChangedName="mensajesRowChanged" msprop:Generator_RowEvArgName="mensajesRowChangeEvent" msprop:Generator_RowClassName="mensajesRow">
+        <xs:element name="mensajes" msprop:Generator_TableClassName="mensajesDataTable" msprop:Generator_TableVarName="tablemensajes" msprop:Generator_RowChangedName="mensajesRowChanged" msprop:Generator_TablePropName="mensajes" msprop:Generator_RowDeletingName="mensajesRowDeleting" msprop:Generator_RowChangingName="mensajesRowChanging" msprop:Generator_RowEvHandlerName="mensajesRowChangeEventHandler" msprop:Generator_RowDeletedName="mensajesRowDeleted" msprop:Generator_RowClassName="mensajesRow" msprop:Generator_UserTableName="mensajes" msprop:Generator_RowEvArgName="mensajesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -538,7 +546,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tickets" msprop:Generator_TableClassName="ticketsDataTable" msprop:Generator_TableVarName="tabletickets" msprop:Generator_TablePropName="tickets" msprop:Generator_RowDeletingName="ticketsRowDeleting" msprop:Generator_RowChangingName="ticketsRowChanging" msprop:Generator_RowEvHandlerName="ticketsRowChangeEventHandler" msprop:Generator_RowDeletedName="ticketsRowDeleted" msprop:Generator_UserTableName="tickets" msprop:Generator_RowChangedName="ticketsRowChanged" msprop:Generator_RowEvArgName="ticketsRowChangeEvent" msprop:Generator_RowClassName="ticketsRow">
+        <xs:element name="tickets" msprop:Generator_TableClassName="ticketsDataTable" msprop:Generator_TableVarName="tabletickets" msprop:Generator_RowChangedName="ticketsRowChanged" msprop:Generator_TablePropName="tickets" msprop:Generator_RowDeletingName="ticketsRowDeleting" msprop:Generator_RowChangingName="ticketsRowChanging" msprop:Generator_RowEvHandlerName="ticketsRowChangeEventHandler" msprop:Generator_RowDeletedName="ticketsRowDeleted" msprop:Generator_RowClassName="ticketsRow" msprop:Generator_UserTableName="tickets" msprop:Generator_RowEvArgName="ticketsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -578,7 +586,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tipos" msprop:Generator_TableClassName="tiposDataTable" msprop:Generator_TableVarName="tabletipos" msprop:Generator_TablePropName="tipos" msprop:Generator_RowDeletingName="tiposRowDeleting" msprop:Generator_RowChangingName="tiposRowChanging" msprop:Generator_RowEvHandlerName="tiposRowChangeEventHandler" msprop:Generator_RowDeletedName="tiposRowDeleted" msprop:Generator_UserTableName="tipos" msprop:Generator_RowChangedName="tiposRowChanged" msprop:Generator_RowEvArgName="tiposRowChangeEvent" msprop:Generator_RowClassName="tiposRow">
+        <xs:element name="tipos" msprop:Generator_TableClassName="tiposDataTable" msprop:Generator_TableVarName="tabletipos" msprop:Generator_RowChangedName="tiposRowChanged" msprop:Generator_TablePropName="tipos" msprop:Generator_RowDeletingName="tiposRowDeleting" msprop:Generator_RowChangingName="tiposRowChanging" msprop:Generator_RowEvHandlerName="tiposRowChangeEventHandler" msprop:Generator_RowDeletedName="tiposRowDeleted" msprop:Generator_RowClassName="tiposRow" msprop:Generator_UserTableName="tipos" msprop:Generator_RowEvArgName="tiposRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -606,7 +614,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usuarios" msprop:Generator_TableClassName="usuariosDataTable" msprop:Generator_TableVarName="tableusuarios" msprop:Generator_TablePropName="usuarios" msprop:Generator_RowDeletingName="usuariosRowDeleting" msprop:Generator_RowChangingName="usuariosRowChanging" msprop:Generator_RowEvHandlerName="usuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="usuariosRowDeleted" msprop:Generator_UserTableName="usuarios" msprop:Generator_RowChangedName="usuariosRowChanged" msprop:Generator_RowEvArgName="usuariosRowChangeEvent" msprop:Generator_RowClassName="usuariosRow">
+        <xs:element name="usuarios" msprop:Generator_TableClassName="usuariosDataTable" msprop:Generator_TableVarName="tableusuarios" msprop:Generator_RowChangedName="usuariosRowChanged" msprop:Generator_TablePropName="usuarios" msprop:Generator_RowDeletingName="usuariosRowDeleting" msprop:Generator_RowChangingName="usuariosRowChanging" msprop:Generator_RowEvHandlerName="usuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="usuariosRowDeleted" msprop:Generator_RowClassName="usuariosRow" msprop:Generator_UserTableName="usuarios" msprop:Generator_RowEvArgName="usuariosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

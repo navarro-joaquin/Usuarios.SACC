@@ -12,7 +12,7 @@ namespace Utilitarios.SACC
 {
 	public partial class FrmLogin : Form
 	{
-		FrmPrincipal principal;
+		FrmPrincipalMDI principal;
 
 		public FrmLogin()
 		{
@@ -32,58 +32,50 @@ namespace Utilitarios.SACC
 		{
 			string login = txtLogin.Text;
 			string password = SHA1Class.GetSHA1(txtPassword.Text);
-            
-			try
-			{
-				int id = Convert.ToInt32(this.usuariosTableAdapter.LoginQuery(login, password));
-                if (id != 0)
+
+            if (!txtLogin.Text.Equals("") && !txtPassword.Text.Equals(""))
+            {
+                try
                 {
-                    string cargo = this.usuariosTableAdapter.getCargoById(id).ToString();
-                    switch (cargo.ToUpper())
+                    int id = Convert.ToInt32(this.usuariosTableAdapter.LoginQuery(login, password));
+                    if (id != 0)
                     {
-                        case "ADMINISTRADOR":
-                            principal = new FrmPrincipal(cargo.ToUpper(), id);
-                            this.Hide();
-                            principal.ShowDialog();
-                            this.Close();
-                            break;
-                        default:
-                            principal = new FrmPrincipal(cargo.ToUpper(), id);
-                            this.Hide();
-                            principal.ShowDialog();
-                            this.Close();
-                            break;
+                        string cargo = this.usuariosTableAdapter.getCargoById(id).ToString();
+                        switch (cargo.ToUpper())
+                        {
+                            case "ADMINISTRADOR":
+                                principal = new FrmPrincipalMDI(cargo.ToUpper(), id);
+                                this.Hide();
+                                principal.ShowDialog();
+                                this.Show();
+                                break;
+                            default:
+                                principal = new FrmPrincipalMDI(cargo.ToUpper(), id);
+                                this.Hide();
+                                principal.ShowDialog();
+                                this.Show();
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nombre de usuario o contraseña incorrectos.\nIntente nuevamente.");
                     }
                 }
-                else
+                catch (MySql.Data.MySqlClient.MySqlException ex)
                 {
-                    MessageBox.Show("Nombre de usuario o contraseña incorrectos.\nIntente nuevamente.");
+                    //MySql.Data.MySqlClient.MySqlErrorCode error = new MySql.Data.MySqlClient.MySqlErrorCode();
+                    MessageBox.Show(ex.Message);
                 }
-			}
-			catch (Exception ex)
-			{
-                //MySql.Data.MySqlClient.MySqlErrorCode error = new MySql.Data.MySqlClient.MySqlErrorCode();
-                MessageBox.Show(ex.Message);
-			}
+            }
+            else
+            {
+                MessageBox.Show("Ingrese todos los datos (usuario y/o contraseña) antes de continuar.");
+            }
 
 			txtLogin.ResetText();
 			txtPassword.ResetText();
 			txtLogin.Focus();
-		}
-
-		private void keyCapture(KeyPressEventArgs e)
-		{
-			if (e.KeyChar == (int)Keys.Enter)
-			{
-				if (txtLogin.Text != "" && txtPassword.Text != "")
-					Login();
-				else
-					MessageBox.Show("Debe rellenar todos los campos");
-			}
-			if (e.KeyChar == (int)Keys.Escape)
-			{
-				this.Close();
-			}
 		}
 
 		private void btnLogin_Click(object sender, EventArgs e)
@@ -94,16 +86,6 @@ namespace Utilitarios.SACC
 		private void btnSalir_Click(object sender, EventArgs e)
 		{
 			this.Close();
-		}
-
-		private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			keyCapture(e);
-		}
-
-		private void txtLogin_KeyPress(object sender, KeyPressEventArgs e)
-		{
-			keyCapture(e);
 		}
     }
 }
