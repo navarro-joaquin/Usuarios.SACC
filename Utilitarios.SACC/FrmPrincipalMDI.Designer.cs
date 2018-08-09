@@ -30,27 +30,30 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.operacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAvisos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuVideos = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuOperaciones = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemAvisos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemVideos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemLogAccesos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemReportesAtendidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuHerramientas = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemConfCorreo = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuVer = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemHerramientas = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemEstado = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuVentanas = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemCascada = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemVertical = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemHorizontal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.closeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemCerrarTodo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip = new System.Windows.Forms.ToolStrip();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ticketsAtendidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -58,138 +61,177 @@
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenu,
-            this.operacionesToolStripMenuItem,
-            this.viewMenu,
-            this.windowsMenu,
-            this.reporteToolStripMenuItem});
+            this.MnuArchivo,
+            this.MnuOperaciones,
+            this.MnuReportes,
+            this.MnuHerramientas,
+            this.MnuVer,
+            this.MnuVentanas});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip.MdiWindowListItem = this.windowsMenu;
+            this.menuStrip.MdiWindowListItem = this.MnuVentanas;
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(819, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
-            // fileMenu
+            // MnuArchivo
             // 
-            this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
-            this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(60, 20);
-            this.fileMenu.Text = "&Archivo";
+            this.MnuArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuItemSalir});
+            this.MnuArchivo.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.MnuArchivo.Name = "MnuArchivo";
+            this.MnuArchivo.Size = new System.Drawing.Size(60, 20);
+            this.MnuArchivo.Text = "&Archivo";
             // 
-            // exitToolStripMenuItem
+            // MnuItemSalir
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.exitToolStripMenuItem.Text = "&Salir";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            this.MnuItemSalir.Name = "MnuItemSalir";
+            this.MnuItemSalir.Size = new System.Drawing.Size(96, 22);
+            this.MnuItemSalir.Text = "&Salir";
+            this.MnuItemSalir.Click += new System.EventHandler(this.EMnuItemSalir_Click);
             // 
-            // operacionesToolStripMenuItem
+            // MnuOperaciones
             // 
-            this.operacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuUsuarios,
-            this.mnuAvisos,
-            this.mnuVideos});
-            this.operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
-            this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.operacionesToolStripMenuItem.Text = "&Operaciones";
+            this.MnuOperaciones.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuItemUsuarios,
+            this.MnuItemAvisos,
+            this.MnuItemVideos,
+            this.MnuItemLogAccesos});
+            this.MnuOperaciones.Name = "MnuOperaciones";
+            this.MnuOperaciones.Size = new System.Drawing.Size(85, 20);
+            this.MnuOperaciones.Text = "&Operaciones";
             // 
-            // mnuUsuarios
+            // MnuItemUsuarios
             // 
-            this.mnuUsuarios.Name = "mnuUsuarios";
-            this.mnuUsuarios.Size = new System.Drawing.Size(220, 22);
-            this.mnuUsuarios.Text = "Mantenimiento de &Usuarios";
-            this.mnuUsuarios.Click += new System.EventHandler(this.mnuUsuarios_Click);
+            this.MnuItemUsuarios.Name = "MnuItemUsuarios";
+            this.MnuItemUsuarios.Size = new System.Drawing.Size(220, 22);
+            this.MnuItemUsuarios.Text = "Mantenimiento de &Usuarios";
+            this.MnuItemUsuarios.Click += new System.EventHandler(this.MnuItemUsuarios_Click);
             // 
-            // mnuAvisos
+            // MnuItemAvisos
             // 
-            this.mnuAvisos.Name = "mnuAvisos";
-            this.mnuAvisos.Size = new System.Drawing.Size(220, 22);
-            this.mnuAvisos.Text = "Mantenimiento de &Avisos";
-            this.mnuAvisos.Click += new System.EventHandler(this.mnuAvisos_Click);
+            this.MnuItemAvisos.Name = "MnuItemAvisos";
+            this.MnuItemAvisos.Size = new System.Drawing.Size(220, 22);
+            this.MnuItemAvisos.Text = "Mantenimiento de &Avisos";
+            this.MnuItemAvisos.Click += new System.EventHandler(this.MnuItemAvisos_Click);
             // 
-            // mnuVideos
+            // MnuItemVideos
             // 
-            this.mnuVideos.Name = "mnuVideos";
-            this.mnuVideos.Size = new System.Drawing.Size(220, 22);
-            this.mnuVideos.Text = "Mantenimiento de &Videos";
-            this.mnuVideos.Click += new System.EventHandler(this.mnuVideos_Click);
+            this.MnuItemVideos.Name = "MnuItemVideos";
+            this.MnuItemVideos.Size = new System.Drawing.Size(220, 22);
+            this.MnuItemVideos.Text = "Mantenimiento de &Videos";
+            this.MnuItemVideos.Click += new System.EventHandler(this.MnuItemVideos_Click);
             // 
-            // viewMenu
+            // MnuItemLogAccesos
             // 
-            this.viewMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolBarToolStripMenuItem,
-            this.statusBarToolStripMenuItem});
-            this.viewMenu.Name = "viewMenu";
-            this.viewMenu.Size = new System.Drawing.Size(35, 20);
-            this.viewMenu.Text = "&Ver";
+            this.MnuItemLogAccesos.Name = "MnuItemLogAccesos";
+            this.MnuItemLogAccesos.Size = new System.Drawing.Size(220, 22);
+            this.MnuItemLogAccesos.Text = "&Log de Accesos";
+            this.MnuItemLogAccesos.Click += new System.EventHandler(this.MnuItemLogAccesos_Click);
             // 
-            // toolBarToolStripMenuItem
+            // MnuReportes
             // 
-            this.toolBarToolStripMenuItem.Checked = true;
-            this.toolBarToolStripMenuItem.CheckOnClick = true;
-            this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
-            this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.toolBarToolStripMenuItem.Text = "&Barra de herramientas";
-            this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.ToolBarToolStripMenuItem_Click);
+            this.MnuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuItemReportesAtendidos});
+            this.MnuReportes.Name = "MnuReportes";
+            this.MnuReportes.Size = new System.Drawing.Size(65, 20);
+            this.MnuReportes.Text = "&Reportes";
             // 
-            // statusBarToolStripMenuItem
+            // MnuItemReportesAtendidos
             // 
-            this.statusBarToolStripMenuItem.Checked = true;
-            this.statusBarToolStripMenuItem.CheckOnClick = true;
-            this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.statusBarToolStripMenuItem.Text = "&Barra de estado";
-            this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
+            this.MnuItemReportesAtendidos.Name = "MnuItemReportesAtendidos";
+            this.MnuItemReportesAtendidos.Size = new System.Drawing.Size(168, 22);
+            this.MnuItemReportesAtendidos.Text = "&Tickets Atendidos";
+            this.MnuItemReportesAtendidos.Click += new System.EventHandler(this.MnuItemReportesAtendidos_Click);
             // 
-            // windowsMenu
+            // MnuHerramientas
             // 
-            this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cascadeToolStripMenuItem,
-            this.tileVerticalToolStripMenuItem,
-            this.tileHorizontalToolStripMenuItem,
+            this.MnuHerramientas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuItemConfCorreo});
+            this.MnuHerramientas.Name = "MnuHerramientas";
+            this.MnuHerramientas.Size = new System.Drawing.Size(90, 20);
+            this.MnuHerramientas.Text = "Herramientas";
+            // 
+            // MnuItemConfCorreo
+            // 
+            this.MnuItemConfCorreo.Name = "MnuItemConfCorreo";
+            this.MnuItemConfCorreo.Size = new System.Drawing.Size(142, 22);
+            this.MnuItemConfCorreo.Text = "Conf. Correo";
+            this.MnuItemConfCorreo.Click += new System.EventHandler(this.MnuItemConfCorreo_Click);
+            // 
+            // MnuVer
+            // 
+            this.MnuVer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuItemHerramientas,
+            this.MnuItemEstado});
+            this.MnuVer.Name = "MnuVer";
+            this.MnuVer.Size = new System.Drawing.Size(35, 20);
+            this.MnuVer.Text = "&Ver";
+            // 
+            // MnuItemHerramientas
+            // 
+            this.MnuItemHerramientas.Checked = true;
+            this.MnuItemHerramientas.CheckOnClick = true;
+            this.MnuItemHerramientas.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MnuItemHerramientas.Name = "MnuItemHerramientas";
+            this.MnuItemHerramientas.Size = new System.Drawing.Size(189, 22);
+            this.MnuItemHerramientas.Text = "&Barra de herramientas";
+            this.MnuItemHerramientas.Click += new System.EventHandler(this.MnuItemHerramientas_Click);
+            // 
+            // MnuItemEstado
+            // 
+            this.MnuItemEstado.Checked = true;
+            this.MnuItemEstado.CheckOnClick = true;
+            this.MnuItemEstado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.MnuItemEstado.Name = "MnuItemEstado";
+            this.MnuItemEstado.Size = new System.Drawing.Size(189, 22);
+            this.MnuItemEstado.Text = "&Barra de estado";
+            this.MnuItemEstado.Click += new System.EventHandler(this.MnuItemEstado_Click);
+            // 
+            // MnuVentanas
+            // 
+            this.MnuVentanas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuItemCascada,
+            this.MnuItemVertical,
+            this.MnuItemHorizontal,
             this.toolStripSeparator1,
-            this.closeAllToolStripMenuItem});
-            this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(66, 20);
-            this.windowsMenu.Text = "&Ventanas";
+            this.MnuItemCerrarTodo});
+            this.MnuVentanas.Name = "MnuVentanas";
+            this.MnuVentanas.Size = new System.Drawing.Size(66, 20);
+            this.MnuVentanas.Text = "&Ventanas";
             // 
-            // cascadeToolStripMenuItem
+            // MnuItemCascada
             // 
-            this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.cascadeToolStripMenuItem.Text = "&Cascada";
-            this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
+            this.MnuItemCascada.Name = "MnuItemCascada";
+            this.MnuItemCascada.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemCascada.Text = "&Cascada";
+            this.MnuItemCascada.Click += new System.EventHandler(this.MnuItemCascada_Click);
             // 
-            // tileVerticalToolStripMenuItem
+            // MnuItemVertical
             // 
-            this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.tileVerticalToolStripMenuItem.Text = "Mosaico &vertical";
-            this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
+            this.MnuItemVertical.Name = "MnuItemVertical";
+            this.MnuItemVertical.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemVertical.Text = "Mosaico &vertical";
+            this.MnuItemVertical.Click += new System.EventHandler(this.MnuItemVertical_Click);
             // 
-            // tileHorizontalToolStripMenuItem
+            // MnuItemHorizontal
             // 
-            this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.tileHorizontalToolStripMenuItem.Text = "Mosaico &horizontal";
-            this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
+            this.MnuItemHorizontal.Name = "MnuItemHorizontal";
+            this.MnuItemHorizontal.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemHorizontal.Text = "Mosaico &horizontal";
+            this.MnuItemHorizontal.Click += new System.EventHandler(this.MnuItemHorizontal_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
             // 
-            // closeAllToolStripMenuItem
+            // MnuItemCerrarTodo
             // 
-            this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.closeAllToolStripMenuItem.Text = "C&errar todo";
-            this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
+            this.MnuItemCerrarTodo.Name = "MnuItemCerrarTodo";
+            this.MnuItemCerrarTodo.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemCerrarTodo.Text = "C&errar todo";
+            this.MnuItemCerrarTodo.Click += new System.EventHandler(this.MnuItemCerrarTodo_Click);
             // 
             // toolStrip
             // 
@@ -214,21 +256,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
-            // 
-            // reporteToolStripMenuItem
-            // 
-            this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ticketsAtendidosToolStripMenuItem});
-            this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
-            this.reporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.reporteToolStripMenuItem.Text = "&Reporte";
-            // 
-            // ticketsAtendidosToolStripMenuItem
-            // 
-            this.ticketsAtendidosToolStripMenuItem.Name = "ticketsAtendidosToolStripMenuItem";
-            this.ticketsAtendidosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.ticketsAtendidosToolStripMenuItem.Text = "&Tickets Atendidos";
-            this.ticketsAtendidosToolStripMenuItem.Click += new System.EventHandler(this.ticketsAtendidosToolStripMenuItem_Click);
             // 
             // FrmPrincipalMDI
             // 
@@ -258,24 +285,27 @@
         private System.Windows.Forms.ToolStrip toolStrip;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
-        private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fileMenu;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewMenu;
-        private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem windowsMenu;
-        private System.Windows.Forms.ToolStripMenuItem cascadeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tileVerticalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeAllToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemHorizontal;
+        private System.Windows.Forms.ToolStripMenuItem MnuArchivo;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemSalir;
+        private System.Windows.Forms.ToolStripMenuItem MnuVer;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemHerramientas;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemEstado;
+        private System.Windows.Forms.ToolStripMenuItem MnuVentanas;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemCascada;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemVertical;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemCerrarTodo;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem operacionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuUsuarios;
-        private System.Windows.Forms.ToolStripMenuItem mnuAvisos;
-        private System.Windows.Forms.ToolStripMenuItem mnuVideos;
+        private System.Windows.Forms.ToolStripMenuItem MnuOperaciones;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemAvisos;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemVideos;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ticketsAtendidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuReportes;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemReportesAtendidos;
+        private System.Windows.Forms.ToolStripMenuItem MnuHerramientas;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemConfCorreo;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemLogAccesos;
     }
 }
 

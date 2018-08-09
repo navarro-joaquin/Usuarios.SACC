@@ -71,7 +71,7 @@ namespace Utilitarios.SACC
             this.reportViewer1.RefreshReport();
         }
 
-        public void generarPDF()
+        public string generarPDF()
         {
             Warning[] warnings;
             string[] streamids;
@@ -89,6 +89,8 @@ namespace Utilitarios.SACC
             {
                 fs.Write(bytes, 0, bytes.Length);
             }
+
+            return nombre_archivo;
         }
     }
 }

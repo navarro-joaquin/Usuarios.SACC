@@ -50,6 +50,7 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -94,11 +95,29 @@
     <Compile Include="FrmAvisos.Designer.cs">
       <DependentUpon>FrmAvisos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConfCorreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfCorreo.Designer.cs">
+      <DependentUpon>FrmConfCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListadoVideos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListadoVideos.Designer.cs">
+      <DependentUpon>FrmListadoVideos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogUsuarios.Designer.cs">
+      <DependentUpon>FrmLogUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOpAviso.cs">
       <SubType>Form</SubType>
@@ -168,8 +187,17 @@
     <EmbeddedResource Include="FrmAvisos.resx">
       <DependentUpon>FrmAvisos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfCorreo.resx">
+      <DependentUpon>FrmConfCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListadoVideos.resx">
+      <DependentUpon>FrmListadoVideos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogUsuarios.resx">
+      <DependentUpon>FrmLogUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOpAviso.resx">
       <DependentUpon>FrmOpAviso.cs</DependentUpon>
@@ -213,7 +241,9 @@
     </Compile>
     <EmbeddedResource Include="Reporte.rdlc" />
     <EmbeddedResource Include="ReporteUsuario.rdlc" />
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="cessa_bdsaccDataSet.xsc">
       <DependentUpon>cessa_bdsaccDataSet.xsd</DependentUpon>
     </None>

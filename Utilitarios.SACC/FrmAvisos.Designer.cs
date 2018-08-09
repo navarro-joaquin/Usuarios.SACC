@@ -89,6 +89,7 @@
             this.dgvAvisos.Location = new System.Drawing.Point(6, 24);
             this.dgvAvisos.Name = "dgvAvisos";
             this.dgvAvisos.ReadOnly = true;
+            this.dgvAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAvisos.Size = new System.Drawing.Size(742, 343);
             this.dgvAvisos.TabIndex = 0;
             // 
@@ -190,6 +191,7 @@
             this.tableAdapterManager.ticketsTableAdapter = null;
             this.tableAdapterManager.tiposTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usuarios_logTableAdapter = null;
             this.tableAdapterManager.usuariosTableAdapter = null;
             // 
             // btnModificar

@@ -82,7 +82,9 @@ namespace Utilitarios.SACC
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            FrmReporteUsuario reporte = new FrmReporteUsuario();
+            int id_usuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
+            string fecha = DateTime.Today.ToString("yyyy-MM-dd");
+            FrmReporteUsuario reporte = new FrmReporteUsuario(fecha, id_usuario);
             reporte.ShowDialog();
         }
     }

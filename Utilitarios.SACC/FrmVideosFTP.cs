@@ -18,8 +18,25 @@ namespace Utilitarios.SACC
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (this.openFileDialog1.ShowDialog() != DialogResult.Cancel)
-                this.txtArchivo.Text = this.openFileDialog1.FileName;
+            try
+            {
+                openFileDialog1.Multiselect = false;
+                openFileDialog1.Filter = "Video files (*.mp4)|*.mp4";
+                if (this.openFileDialog1.ShowDialog() != DialogResult.Cancel)
+                {
+                    System.IO.FileInfo fi = new System.IO.FileInfo(openFileDialog1.FileName);
+                    if (fi.Length > 700000000)
+                        throw new Exception("El tamaño del archivo superó los 700 MBytes");
+                    else
+                        this.txtArchivo.Text = this.openFileDialog1.FileName;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex.Message, "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            //if (this.openFileDialog1.ShowDialog() != DialogResult.Cancel)
+            //    this.txtArchivo.Text = this.openFileDialog1.FileName;
         }
 
         private void btnSubir_Click(object sender, EventArgs e)
@@ -32,21 +49,29 @@ namespace Utilitarios.SACC
             }
             else
             {
-                // Crea una nueva instancia 'ftpSettings' para almacenar todos los paramentros del hilo claseFTP
-                FtpSettings f = new FtpSettings();
-                f.Servidor = this.txtServidor.Text;
-                f.Usuario = this.txtUsuario.Text;
-                f.Contrasena = this.txtContrasena.Text;
-                f.CarpetaDestino = this.txtCarpetaDestino.Text;
-                f.Archivo = this.txtArchivo.Text;
-                try
+                // Comprueba que los datos del usuario FTP sean rellenados en el formulario
+                if (!txtServidor.Text.Equals(string.Empty) && !txtUsuario.Text.Equals(string.Empty) && !txtContrasena.Text.Equals(string.Empty))
                 {
-                    f.Puerto = Int32.Parse(this.txtPuerto.Text);
+                    // Crea una nueva instancia 'ftpSettings' para almacenar todos los paramentros del hilo claseFTP
+                    FtpSettings f = new FtpSettings();
+                    f.Servidor = this.txtServidor.Text;
+                    f.Usuario = this.txtUsuario.Text;
+                    f.Contrasena = this.txtContrasena.Text;
+                    f.CarpetaDestino = this.txtCarpetaDestino.Text;
+                    f.Archivo = this.txtArchivo.Text;
+                    try
+                    {
+                        f.Puerto = Int32.Parse(this.txtPuerto.Text);
+                    }
+                    catch { }
+                    this.toolStripProgressBar1.Visible = true;
+                    this.claseFTP1.RunWorkerAsync(f);
+                    this.btnSubir.Text = "Cancelar";
                 }
-                catch { }
-                this.toolStripProgressBar1.Visible = true;
-                this.claseFTP1.RunWorkerAsync(f);
-                this.btnSubir.Text = "Cancelar";
+                else
+                {
+                    MessageBox.Show("Error: Datos faltantes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
             }
         }
 
@@ -69,6 +94,7 @@ namespace Utilitarios.SACC
             else
             {
                 this.toolStripStatusLabel1.Text = "Subida completada";
+                this.txtArchivo.ResetText();
             }
             this.btnSubir.Text = "Subir";
             this.toolStripProgressBar1.Visible = false;

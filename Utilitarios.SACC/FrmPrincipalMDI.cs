@@ -20,19 +20,19 @@ namespace Utilitarios.SACC
             switch(cargo)
             {
                 case "ADMINISTRADOR":
-                    mnuUsuarios.Enabled = true;
-                    mnuAvisos.Enabled = true;
-                    mnuVideos.Enabled = true;
+                    MnuItemUsuarios.Enabled = true;
+                    MnuItemAvisos.Enabled = true;
+                    MnuItemVideos.Enabled = true;
                     break;
                 case "RRPP":
-                    mnuUsuarios.Enabled = false;
-                    mnuAvisos.Enabled = true;
-                    mnuVideos.Enabled = false;
+                    MnuItemUsuarios.Enabled = false;
+                    MnuItemAvisos.Enabled = true;
+                    MnuItemVideos.Enabled = false;
                     break;
                 default:
-                    mnuUsuarios.Enabled = false;
-                    mnuAvisos.Enabled = false;
-                    mnuVideos.Enabled = false;
+                    MnuItemUsuarios.Enabled = false;
+                    MnuItemAvisos.Enabled = false;
+                    MnuItemVideos.Enabled = false;
                     break;
             }
 
@@ -40,37 +40,37 @@ namespace Utilitarios.SACC
         }
 
         //Funcionalidad de los elementos en menú
-        private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
+        private void EMnuItemSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuItemHerramientas_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+            toolStrip.Visible = MnuItemHerramientas.Checked;
         }
 
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuItemEstado_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            statusStrip.Visible = MnuItemEstado.Checked;
         }
 
-        private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuItemCascada_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
         }
 
-        private void TileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuItemVertical_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileVertical);
         }
 
-        private void TileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuItemHorizontal_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
         }
 
-        private void CloseAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuItemCerrarTodo_Click(object sender, EventArgs e)
         {
             foreach (Form childForm in MdiChildren)
             {
@@ -78,30 +78,44 @@ namespace Utilitarios.SACC
             }
         }
 
-        private void mnuUsuarios_Click(object sender, EventArgs e)
+        private void MnuItemUsuarios_Click(object sender, EventArgs e)
         {
             FrmUsuarios frm = new FrmUsuarios(id_usuario);
             frm.MdiParent = this;
             frm.Show();
         }
 
-        private void mnuAvisos_Click(object sender, EventArgs e)
+        private void MnuItemAvisos_Click(object sender, EventArgs e)
         {
             FrmAvisos frm = new FrmAvisos(id_usuario);
             frm.MdiParent = this;
             frm.Show();
         }
 
-        private void mnuVideos_Click(object sender, EventArgs e)
+        private void MnuItemVideos_Click(object sender, EventArgs e)
         {
-            FrmVideosFTP frm = new FrmVideosFTP();
+            FrmListadoVideos frm = new FrmListadoVideos();
             frm.MdiParent = this;
             frm.Show();
         }
 
-        private void ticketsAtendidosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MnuItemReportesAtendidos_Click(object sender, EventArgs e)
         {
             FrmPreReporteUsuario frm = new FrmPreReporteUsuario();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void MnuItemConfCorreo_Click(object sender, EventArgs e)
+        {
+            FrmConfCorreo frm = new FrmConfCorreo();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void MnuItemLogAccesos_Click(object sender, EventArgs e)
+        {
+            FrmLogUsuarios frm = new FrmLogUsuarios();
             frm.MdiParent = this;
             frm.Show();
         }

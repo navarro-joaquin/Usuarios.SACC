@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -38,7 +39,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.usuariosTableAdapter = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.usuariosTableAdapter();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cessa_bdsaccDataSet)).BeginInit();
@@ -58,11 +58,21 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(183, 122);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(125, 49);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Generar y Enviar\r\npor correo";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(32, 131);
+            this.btnGenerar.Location = new System.Drawing.Point(32, 122);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(126, 40);
+            this.btnGenerar.Size = new System.Drawing.Size(126, 49);
             this.btnGenerar.TabIndex = 4;
             this.btnGenerar.Text = "Generar y Visualizar";
             this.btnGenerar.UseVisualStyleBackColor = true;
@@ -118,16 +128,6 @@
             // usuariosTableAdapter
             // 
             this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(183, 131);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(125, 40);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.Text = "Generar y Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // FrmPreReporteUsuario
             // 

@@ -460,7 +460,7 @@
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="listUsersForReport" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="listUsersForReport" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="listUsersForReport">
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="listUsersForReport" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="listUsersForReport" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="listUsersForReport">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `id`, `login`, `password`, `nombre`, `cargo`, `rol`, `ubicacion`, `estado`, `creado`, `modificado`, `usuario_creador_id`, `usuario_modificador_id` FROM `usuarios` ORDER BY `cargo`</CommandText>
@@ -468,7 +468,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="listUsersOrderById" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="listUsersOrderById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="listUsersOrderById">
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="listUsersOrderById" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="listUsersOrderById" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="listUsersOrderById">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT `id`, `login`, `password`, `nombre`, `cargo`, `rol`, `ubicacion`, `estado`, `creado`, `modificado`, `usuario_creador_id`, `usuario_modificador_id` FROM `usuarios` ORDER BY `id`</CommandText>
@@ -476,7 +476,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="LoginQuery" Modifier="Public" Name="LoginQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="LoginQuery">
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="LoginQuery" Modifier="Public" Name="LoginQuery" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="LoginQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id FROM usuarios WHERE login = @login AND password = @password</CommandText>
@@ -487,7 +487,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="resetPassword" Modifier="Public" Name="resetPassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="resetPassword">
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="resetPassword" Modifier="Public" Name="resetPassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="resetPassword">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE `usuarios` SET `password` = @password WHERE `id` = @id</CommandText>
@@ -498,7 +498,7 @@
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="updateUsuario" Modifier="Public" Name="updateUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="updateUsuario">
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="updateUsuario" Modifier="Public" Name="updateUsuario" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="updateUsuario">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE `usuarios` SET `login` = @login, `nombre` = @nombre, `cargo` = @cargo, `rol` = @rol, `ubicacion` = @ubicacion, `estado` = @estado, `modificado` = @modificado, `usuario_modificador_id` = @usuarioModificador WHERE `id` = @id</CommandText>
@@ -512,6 +512,147 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="modificado" ColumnName="modificado" DataSourceName="cessa_bdsacc.usuarios" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@modificado" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="modificado" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="usuarioModificador" ColumnName="usuario_modificador_id" DataSourceName="cessa_bdsacc.usuarios" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@usuarioModificador" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="usuario_modificador_id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="cessa_bdsacc.usuarios" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="usuarios_logTableAdapter" GeneratorDataComponentClassName="usuarios_logTableAdapter" Name="usuarios_log" UserDataComponentName="usuarios_logTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios_log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `usuarios_log` WHERE ((`id` = @p1) AND (`fecha_ingreso` = @p2) AND (`fecha_salida` = @p3) AND (`duracion` = @p4) AND (`login` = @p5) AND (`estado` = @p6))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_ingreso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_salida" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="duracion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="login" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `usuarios_log` (`fecha_ingreso`, `fecha_salida`, `duracion`, `login`, `estado`) VALUES (@p1, @p2, @p3, @p4, @p5)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_ingreso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_salida" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="duracion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `fecha_ingreso`, `fecha_salida`, `duracion`, `login`, `estado` FROM `usuarios_log`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `usuarios_log` SET `fecha_ingreso` = @p1, `fecha_salida` = @p2, `duracion` = @p3, `login` = @p4, `estado` = @p5 WHERE ((`id` = @p6) AND (`fecha_ingreso` = @p7) AND (`fecha_salida` = @p8) AND (`duracion` = @p9) AND (`login` = @p10) AND (`estado` = @p11))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_ingreso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_salida" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="duracion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_ingreso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@p8" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="fecha_salida" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Time" Direction="Input" ParameterName="@p9" Precision="0" ProviderType="Time" Scale="0" Size="0" SourceColumn="duracion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p10" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="login" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p11" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="estado" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="fecha_ingreso" DataSetColumn="fecha_ingreso" />
+              <Mapping SourceColumn="fecha_salida" DataSetColumn="fecha_salida" />
+              <Mapping SourceColumn="duracion" DataSetColumn="duracion" />
+              <Mapping SourceColumn="login" DataSetColumn="login" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.usuarios_log" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FilterByLogin" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FilterByLogin" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FilterByLogin">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT `id`, `fecha_ingreso`, `fecha_salida`, `duracion`, `login`, `estado` FROM `usuarios_log` WHERE `login` = @login</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="login" ColumnName="login" DataSourceName="cessa_bdsacc.usuarios_log" DataTypeServer="varchar(30)(30)" DbType="String" Direction="Input" ParameterName="@login" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="login" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="videosTableAdapter" GeneratorDataComponentClassName="videosTableAdapter" Name="videos" UserDataComponentName="videosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="cessa_bdsacc.videos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `videos` WHERE ((`id` = @p1) AND (`ruta_archivo` = @p2) AND (`nombre_archivo` = @p3) AND (`cantidad_reproducciones` = @p4))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ruta_archivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombre_archivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="cantidad_reproducciones" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `videos` (`ruta_archivo`, `nombre_archivo`, `cantidad_reproducciones`) VALUES (@p1, @p2, @p3)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ruta_archivo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombre_archivo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="cantidad_reproducciones" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `ruta_archivo`, `nombre_archivo`, `cantidad_reproducciones` FROM `videos`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `videos` SET `ruta_archivo` = @p1, `nombre_archivo` = @p2, `cantidad_reproducciones` = @p3 WHERE ((`id` = @p4) AND (`ruta_archivo` = @p5) AND (`nombre_archivo` = @p6) AND (`cantidad_reproducciones` = @p7))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p1" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ruta_archivo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p2" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombre_archivo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p3" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="cantidad_reproducciones" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p4" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p5" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ruta_archivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@p6" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nombre_archivo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@p7" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="cantidad_reproducciones" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="ruta_archivo" DataSetColumn="ruta_archivo" />
+              <Mapping SourceColumn="nombre_archivo" DataSetColumn="nombre_archivo" />
+              <Mapping SourceColumn="cantidad_reproducciones" DataSetColumn="cantidad_reproducciones" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cessa_bdsaccConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarCantidad" Modifier="Public" Name="ActualizarCantidad" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActualizarCantidad">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE `videos` SET `cantidad_reproducciones` = @cantidad_reproducciones WHERE (`id` = @OriginalID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="cantidad_reproducciones" ColumnName="cantidad_reproducciones" DataSourceName="cessa_bdsacc.videos" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@cantidad_reproducciones" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="cantidad_reproducciones" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="OriginalID" ColumnName="id" DataSourceName="cessa_bdsacc.videos" DataTypeServer="int(11)" DbType="Int32" Direction="Input" ParameterName="@OriginalID" Precision="0" ProviderType="Int32" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -674,6 +815,52 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="usuarios_log" msprop:Generator_TableClassName="usuarios_logDataTable" msprop:Generator_TableVarName="tableusuarios_log" msprop:Generator_RowChangedName="usuarios_logRowChanged" msprop:Generator_TablePropName="usuarios_log" msprop:Generator_RowDeletingName="usuarios_logRowDeleting" msprop:Generator_RowChangingName="usuarios_logRowChanging" msprop:Generator_RowEvHandlerName="usuarios_logRowChangeEventHandler" msprop:Generator_RowDeletedName="usuarios_logRowDeleted" msprop:Generator_RowClassName="usuarios_logRow" msprop:Generator_UserTableName="usuarios_log" msprop:Generator_RowEvArgName="usuarios_logRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="fecha_ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso" msprop:Generator_ColumnPropNameInRow="fecha_ingreso" msprop:Generator_ColumnPropNameInTable="fecha_ingresoColumn" msprop:Generator_UserColumnName="fecha_ingreso" type="xs:dateTime" />
+              <xs:element name="fecha_salida" msprop:Generator_ColumnVarNameInTable="columnfecha_salida" msprop:Generator_ColumnPropNameInRow="fecha_salida" msprop:Generator_ColumnPropNameInTable="fecha_salidaColumn" msprop:Generator_UserColumnName="fecha_salida" type="xs:dateTime" />
+              <xs:element name="duracion" msprop:Generator_ColumnVarNameInTable="columnduracion" msprop:Generator_ColumnPropNameInRow="duracion" msprop:Generator_ColumnPropNameInTable="duracionColumn" msprop:Generator_UserColumnName="duracion" type="xs:duration" />
+              <xs:element name="login" msprop:Generator_ColumnVarNameInTable="columnlogin" msprop:Generator_ColumnPropNameInRow="login" msprop:Generator_ColumnPropNameInTable="loginColumn" msprop:Generator_UserColumnName="login">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="videos" msprop:Generator_TableClassName="videosDataTable" msprop:Generator_TableVarName="tablevideos" msprop:Generator_TablePropName="videos" msprop:Generator_RowDeletingName="videosRowDeleting" msprop:Generator_RowChangingName="videosRowChanging" msprop:Generator_RowEvHandlerName="videosRowChangeEventHandler" msprop:Generator_RowDeletedName="videosRowDeleted" msprop:Generator_UserTableName="videos" msprop:Generator_RowChangedName="videosRowChanged" msprop:Generator_RowEvArgName="videosRowChangeEvent" msprop:Generator_RowClassName="videosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="ruta_archivo" msprop:Generator_ColumnVarNameInTable="columnruta_archivo" msprop:Generator_ColumnPropNameInRow="ruta_archivo" msprop:Generator_ColumnPropNameInTable="ruta_archivoColumn" msprop:Generator_UserColumnName="ruta_archivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_archivo" msprop:Generator_ColumnVarNameInTable="columnnombre_archivo" msprop:Generator_ColumnPropNameInRow="nombre_archivo" msprop:Generator_ColumnPropNameInTable="nombre_archivoColumn" msprop:Generator_UserColumnName="nombre_archivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidad_reproducciones" msprop:Generator_ColumnVarNameInTable="columncantidad_reproducciones" msprop:Generator_ColumnPropNameInRow="cantidad_reproducciones" msprop:Generator_ColumnPropNameInTable="cantidad_reproduccionesColumn" msprop:Generator_UserColumnName="cantidad_reproducciones" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -690,6 +877,14 @@
     </xs:unique>
     <xs:unique name="usuarios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:usuarios" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="usuarios_log_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:usuarios_log" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="videos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:videos" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
   </xs:element>
