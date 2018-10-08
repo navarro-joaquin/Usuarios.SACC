@@ -12,7 +12,7 @@ namespace Utilitarios.SACC.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,17 +20,6 @@ namespace Utilitarios.SACC.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=cessa;password=C3ss4Tv2015;database=cessa_bdsacc;persist" +
-            "securityinfo=True")]
-        public string cessa_bdsaccConnectionString {
-            get {
-                return ((string)(this["cessa_bdsaccConnectionString"]));
             }
         }
         
@@ -43,6 +32,17 @@ namespace Utilitarios.SACC.Properties {
             }
             set {
                 this["Valor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=cessa;password=C3ss4Tv2015;database=cessa_bdsacc;persist" +
+            "securityinfo=True;Convert Zero Datetime=true")]
+        public string cessa_bdsaccConnectionString {
+            get {
+                return ((string)(this["cessa_bdsaccConnectionString"]));
             }
         }
     }

@@ -12,7 +12,7 @@
   <xs:element name="consultasDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="consultasDataSet" msprop:Generator_UserDSName="consultasDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Busqueda" msprop:Generator_TableClassName="BusquedaDataTable" msprop:Generator_TableVarName="tableBusqueda" msprop:Generator_RowChangedName="BusquedaRowChanged" msprop:Generator_TablePropName="Busqueda" msprop:Generator_RowDeletingName="BusquedaRowDeleting" msprop:Generator_RowChangingName="BusquedaRowChanging" msprop:Generator_RowEvHandlerName="BusquedaRowChangeEventHandler" msprop:Generator_RowDeletedName="BusquedaRowDeleted" msprop:Generator_RowClassName="BusquedaRow" msprop:Generator_UserTableName="Busqueda" msprop:Generator_RowEvArgName="BusquedaRowChangeEvent">
+        <xs:element name="Busqueda" msprop:Generator_TableClassName="BusquedaDataTable" msprop:Generator_TableVarName="tableBusqueda" msprop:Generator_TablePropName="Busqueda" msprop:Generator_RowDeletingName="BusquedaRowDeleting" msprop:Generator_RowChangingName="BusquedaRowChanging" msprop:Generator_RowEvHandlerName="BusquedaRowChangeEventHandler" msprop:Generator_RowDeletedName="BusquedaRowDeleted" msprop:Generator_UserTableName="Busqueda" msprop:Generator_RowChangedName="BusquedaRowChanged" msprop:Generator_RowEvArgName="BusquedaRowChangeEvent" msprop:Generator_RowClassName="BusquedaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="login" msprop:Generator_ColumnVarNameInTable="columnlogin" msprop:Generator_ColumnPropNameInRow="login" msprop:Generator_ColumnPropNameInTable="loginColumn" msprop:Generator_UserColumnName="login" type="xs:string" minOccurs="0" />
@@ -24,6 +24,16 @@
               <xs:element name="TiempoAtencion" msprop:Generator_ColumnVarNameInTable="columnTiempoAtencion" msprop:Generator_ColumnPropNameInRow="TiempoAtencion" msprop:Generator_ColumnPropNameInTable="TiempoAtencionColumn" msprop:Generator_UserColumnName="TiempoAtencion" type="xs:duration" minOccurs="0" />
               <xs:element name="TiempoAtencionPromedio" msprop:Generator_ColumnVarNameInTable="columnTiempoAtencionPromedio" msprop:Generator_ColumnPropNameInRow="TiempoAtencionPromedio" msprop:Generator_ColumnPropNameInTable="TiempoAtencionPromedioColumn" msprop:Generator_UserColumnName="TiempoAtencionPromedio" type="xs:duration" minOccurs="0" />
               <xs:element name="TotalAtendidos" msprop:Generator_ColumnVarNameInTable="columnTotalAtendidos" msprop:Generator_ColumnPropNameInRow="TotalAtendidos" msprop:Generator_ColumnPropNameInTable="TotalAtendidosColumn" msprop:Generator_UserColumnName="TotalAtendidos" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Comparativa" msprop:Generator_TableClassName="ComparativaDataTable" msprop:Generator_TableVarName="tableComparativa" msprop:Generator_TablePropName="Comparativa" msprop:Generator_RowDeletingName="ComparativaRowDeleting" msprop:Generator_RowChangingName="ComparativaRowChanging" msprop:Generator_RowEvHandlerName="ComparativaRowChangeEventHandler" msprop:Generator_RowDeletedName="ComparativaRowDeleted" msprop:Generator_UserTableName="Comparativa" msprop:Generator_RowChangedName="ComparativaRowChanged" msprop:Generator_RowEvArgName="ComparativaRowChangeEvent" msprop:Generator_RowClassName="ComparativaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Operador" msprop:Generator_ColumnVarNameInTable="columnOperador" msprop:Generator_ColumnPropNameInRow="Operador" msprop:Generator_ColumnPropNameInTable="OperadorColumn" msprop:Generator_UserColumnName="Operador" type="xs:string" minOccurs="0" />
+              <xs:element name="Ubicacion" msprop:Generator_ColumnVarNameInTable="columnUbicacion" msprop:Generator_ColumnPropNameInRow="Ubicacion" msprop:Generator_ColumnPropNameInTable="UbicacionColumn" msprop:Generator_UserColumnName="Ubicacion" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalAtendidosDia" msprop:Generator_ColumnVarNameInTable="columnTotalAtendidosDia" msprop:Generator_ColumnPropNameInRow="TotalAtendidosDia" msprop:Generator_ColumnPropNameInTable="TotalAtendidosDiaColumn" msprop:Generator_UserColumnName="TotalAtendidosDia" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

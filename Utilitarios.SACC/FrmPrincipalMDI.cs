@@ -119,5 +119,19 @@ namespace Utilitarios.SACC
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void MnuItemComparativaAtencion_Click(object sender, EventArgs e)
+        {
+            FrmReporteComparativa frm = new FrmReporteComparativa();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void MnuItemConfAtencion_Click(object sender, EventArgs e)
+        {
+            FrmConfAtencion frm = new FrmConfAtencion();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

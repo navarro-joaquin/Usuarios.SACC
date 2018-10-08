@@ -37,22 +37,22 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cessa_bdsaccDataSet = new Utilitarios.SACC.cessa_bdsaccDataSet();
-            this.usuariosTableAdapter = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.usuariosTableAdapter();
-            this.tableAdapterManager = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager();
             this.pxFooter = new System.Windows.Forms.PictureBox();
             this.pxHeader = new System.Windows.Forms.PictureBox();
             this.pxLogo = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cessa_bdsaccDataSet = new Utilitarios.SACC.cessa_bdsaccDataSet();
+            this.usuariosTableAdapter = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.usuariosTableAdapter();
+            this.tableAdapterManager = new Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager();
             lblPassword = new System.Windows.Forms.Label();
             lblLogin = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cessa_bdsaccDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxFooter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cessa_bdsaccDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPassword
@@ -151,29 +151,6 @@
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // usuariosBindingSource
-            // 
-            this.usuariosBindingSource.DataMember = "usuarios";
-            this.usuariosBindingSource.DataSource = this.cessa_bdsaccDataSet;
-            // 
-            // cessa_bdsaccDataSet
-            // 
-            this.cessa_bdsaccDataSet.DataSetName = "cessa_bdsaccDataSet";
-            this.cessa_bdsaccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usuariosTableAdapter
-            // 
-            this.usuariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.mensajesTableAdapter = null;
-            this.tableAdapterManager.ticketsTableAdapter = null;
-            this.tableAdapterManager.tiposTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
-            // 
             // pxFooter
             // 
             this.pxFooter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -218,6 +195,31 @@
             this.lblTitulo.TabIndex = 7;
             this.lblTitulo.Text = "Inicio de Sesión";
             // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "usuarios";
+            this.usuariosBindingSource.DataSource = this.cessa_bdsaccDataSet;
+            // 
+            // cessa_bdsaccDataSet
+            // 
+            this.cessa_bdsaccDataSet.DataSetName = "cessa_bdsaccDataSet";
+            this.cessa_bdsaccDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.mensajesTableAdapter = null;
+            this.tableAdapterManager.ticketsTableAdapter = null;
+            this.tableAdapterManager.tiposTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Utilitarios.SACC.cessa_bdsaccDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usuarios_logTableAdapter = null;
+            this.tableAdapterManager.usuariosTableAdapter = this.usuariosTableAdapter;
+            this.tableAdapterManager.videosTableAdapter = null;
+            // 
             // FrmLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -233,6 +235,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -240,11 +243,11 @@
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cessa_bdsaccDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxFooter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cessa_bdsaccDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

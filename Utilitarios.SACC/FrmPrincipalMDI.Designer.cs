@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipalMDI));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.MnuArchivo = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemSalir = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,8 +40,10 @@
             this.MnuItemLogAccesos = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemReportesAtendidos = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemComparativaAtencion = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuHerramientas = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemConfCorreo = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemConfAtencion = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuVer = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemHerramientas = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemEstado = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +89,7 @@
             // MnuItemSalir
             // 
             this.MnuItemSalir.Name = "MnuItemSalir";
-            this.MnuItemSalir.Size = new System.Drawing.Size(96, 22);
+            this.MnuItemSalir.Size = new System.Drawing.Size(180, 22);
             this.MnuItemSalir.Text = "&Salir";
             this.MnuItemSalir.Click += new System.EventHandler(this.EMnuItemSalir_Click);
             // 
@@ -132,7 +135,8 @@
             // MnuReportes
             // 
             this.MnuReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuItemReportesAtendidos});
+            this.MnuItemReportesAtendidos,
+            this.MnuItemComparativaAtencion});
             this.MnuReportes.Name = "MnuReportes";
             this.MnuReportes.Size = new System.Drawing.Size(65, 20);
             this.MnuReportes.Text = "&Reportes";
@@ -140,14 +144,22 @@
             // MnuItemReportesAtendidos
             // 
             this.MnuItemReportesAtendidos.Name = "MnuItemReportesAtendidos";
-            this.MnuItemReportesAtendidos.Size = new System.Drawing.Size(168, 22);
+            this.MnuItemReportesAtendidos.Size = new System.Drawing.Size(193, 22);
             this.MnuItemReportesAtendidos.Text = "&Tickets Atendidos";
             this.MnuItemReportesAtendidos.Click += new System.EventHandler(this.MnuItemReportesAtendidos_Click);
+            // 
+            // MnuItemComparativaAtencion
+            // 
+            this.MnuItemComparativaAtencion.Name = "MnuItemComparativaAtencion";
+            this.MnuItemComparativaAtencion.Size = new System.Drawing.Size(193, 22);
+            this.MnuItemComparativaAtencion.Text = "Comparativa Atención";
+            this.MnuItemComparativaAtencion.Click += new System.EventHandler(this.MnuItemComparativaAtencion_Click);
             // 
             // MnuHerramientas
             // 
             this.MnuHerramientas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MnuItemConfCorreo});
+            this.MnuItemConfCorreo,
+            this.MnuItemConfAtencion});
             this.MnuHerramientas.Name = "MnuHerramientas";
             this.MnuHerramientas.Size = new System.Drawing.Size(90, 20);
             this.MnuHerramientas.Text = "Herramientas";
@@ -155,9 +167,16 @@
             // MnuItemConfCorreo
             // 
             this.MnuItemConfCorreo.Name = "MnuItemConfCorreo";
-            this.MnuItemConfCorreo.Size = new System.Drawing.Size(142, 22);
+            this.MnuItemConfCorreo.Size = new System.Drawing.Size(180, 22);
             this.MnuItemConfCorreo.Text = "Conf. Correo";
             this.MnuItemConfCorreo.Click += new System.EventHandler(this.MnuItemConfCorreo_Click);
+            // 
+            // MnuItemConfAtencion
+            // 
+            this.MnuItemConfAtencion.Name = "MnuItemConfAtencion";
+            this.MnuItemConfAtencion.Size = new System.Drawing.Size(180, 22);
+            this.MnuItemConfAtencion.Text = "Conf. Atención";
+            this.MnuItemConfAtencion.Click += new System.EventHandler(this.MnuItemConfAtencion_Click);
             // 
             // MnuVer
             // 
@@ -203,33 +222,33 @@
             // MnuItemCascada
             // 
             this.MnuItemCascada.Name = "MnuItemCascada";
-            this.MnuItemCascada.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemCascada.Size = new System.Drawing.Size(180, 22);
             this.MnuItemCascada.Text = "&Cascada";
             this.MnuItemCascada.Click += new System.EventHandler(this.MnuItemCascada_Click);
             // 
             // MnuItemVertical
             // 
             this.MnuItemVertical.Name = "MnuItemVertical";
-            this.MnuItemVertical.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemVertical.Size = new System.Drawing.Size(180, 22);
             this.MnuItemVertical.Text = "Mosaico &vertical";
             this.MnuItemVertical.Click += new System.EventHandler(this.MnuItemVertical_Click);
             // 
             // MnuItemHorizontal
             // 
             this.MnuItemHorizontal.Name = "MnuItemHorizontal";
-            this.MnuItemHorizontal.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemHorizontal.Size = new System.Drawing.Size(180, 22);
             this.MnuItemHorizontal.Text = "Mosaico &horizontal";
             this.MnuItemHorizontal.Click += new System.EventHandler(this.MnuItemHorizontal_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // MnuItemCerrarTodo
             // 
             this.MnuItemCerrarTodo.Name = "MnuItemCerrarTodo";
-            this.MnuItemCerrarTodo.Size = new System.Drawing.Size(175, 22);
+            this.MnuItemCerrarTodo.Size = new System.Drawing.Size(180, 22);
             this.MnuItemCerrarTodo.Text = "C&errar todo";
             this.MnuItemCerrarTodo.Click += new System.EventHandler(this.MnuItemCerrarTodo_Click);
             // 
@@ -265,6 +284,7 @@
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FrmPrincipalMDI";
@@ -306,6 +326,8 @@
         private System.Windows.Forms.ToolStripMenuItem MnuHerramientas;
         private System.Windows.Forms.ToolStripMenuItem MnuItemConfCorreo;
         private System.Windows.Forms.ToolStripMenuItem MnuItemLogAccesos;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemComparativaAtencion;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemConfAtencion;
     }
 }
 
