@@ -103,53 +103,49 @@ namespace Utilitarios.SACC
                 "DROP function IF EXISTS `func_atencion_plataforma`; " +
                 "CREATE DEFINER =`cessa`@`%` FUNCTION `func_atencion_plataforma`() RETURNS varchar(200) " +
                 "BEGIN " +
-                    "DECLARE contador INT; " +
                     "DECLARE consulta VARCHAR(200); " +
-                    "DECLARE bandera BOOLEAN; " +
-                    "DECLARE hora TIME; " +
-                    "DECLARE hora_normal TIME; " +
                     "DECLARE hayMayoresPlataforma BOOLEAN; " +
+                    "DECLARE id_normal INT; " +
+                    "DECLARE id_mayor INT; " +
+
+                    "SET consulta := ''; " +
                     "SET hayMayoresPlataforma = NULL; " +
-                    "SET contador = 0; " +
-                    "SET consulta = \"\"; " +
-                    "SET bandera = FALSE; " +
-                    "SET hora = '00:00:00'; " +
-                    "SET hora_normal = '00:00:00'; " +
+
                     "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND estado IN ('8', '9') ORDER BY estado DESC, numero ASC) THEN " +
                         "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND estado IN('8', '9') ORDER BY estado DESC, numero ASC\"; " +
                         "RETURN consulta; " +
                     "ELSE " +
-                        "IF EXISTS (SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('B', 'C') AND estado < 2) THEN " +
-                            "SET hora = (SELECT hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('B', 'C') AND estado < 2 ORDER BY estado DESC, numero ASC LIMIT 1); " +
-                        "ELSE " +
-                            "SET hora = '23:59:59'; " +
-                        "END IF; " +
-                        "IF (EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('B', 'C') AND estado < 2) AND bandera) THEN " +
-                            "SET contador = 0; " +
-                            "SET bandera = FALSE; " +
-                            "SET hayMayoresPlataforma = TRUE; " +
-                        "ELSE " +
-                            "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('A') AND estado < 2) THEN " +
-                                "SET hayMayoresPlataforma = FALSE; " +
-                                "SET contador = contador + 1; " +
-                                "SET hora_normal = (SELECT hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('A') AND estado < 2 ORDER BY estado DESC, numero ASC LIMIT 1); " +
-                                "IF (contador = 2 OR (hora < hora_normal)) THEN " +
-                                    "SET hayMayoresPlataforma = TRUE; " +
-                                    "SET contador = 0; " +
+                        "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('A') AND estado < 2) THEN " +
+                            "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('B', 'C') AND estado < 2) THEN " +
+                                "SET id_mayor = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('B', 'C') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "SET id_normal = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('A') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "IF(id_mayor < id_normal) THEN " +
+                                    "UPDATE aux_call SET aux_plat = 0 WHERE id = 1; " +
+                                    "SET hayMayoresPlataforma := TRUE; " +
+                                "ELSE " +
+
+                                    "IF((SELECT aux_cajas FROM aux_plat WHERE id = 1) >= 0 AND(SELECT aux_plat FROM aux_call WHERE id = 1) < 2) THEN " +
+                                        "UPDATE aux_call SET aux_plat = aux_plat + 1 WHERE id = 1; " +
+                                        "SET hayMayoresPlataforma := FALSE; " +
+                                    "ELSE " +
+                                        "UPDATE aux_call SET aux_plat = 0 WHERE id = 1; " +
+                                        "SET hayMayoresPlataforma := TRUE; " +
+                                    "END IF; " +
                                 "END IF; " +
                             "ELSE " +
-                                "SET hayMayoresPlataforma = TRUE; " +
-                                "SET contador = 0; " +
+                                "UPDATE aux_call SET aux_cajas = aux_plat + 1 WHERE id = 1; " +
+                                "SET hayMayoresPlataforma := FALSE; " +
                             "END IF; " +
-                            "IF (contador = 2) THEN " +
-                                "SET bandera = TRUE; " +
-                            "END IF; " +
+                        "ELSE " +
+                            "UPDATE aux_call SET aux_plat = 0 WHERE id = 1; " +
+                            "SET hayMayoresPlataforma = TRUE; " +
                         "END IF; " +
-                        "IF (hayMayoresPlataforma = TRUE) THEN " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('B', 'C') ORDER BY estado DESC, numero ASC\"; " +
+
+                        "IF(hayMayoresPlataforma = TRUE) THEN " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('B', 'C') ORDER BY estado DESC, numero ASC\"; " +
                             "RETURN consulta; " +
                         "ELSE " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('A') ORDER BY estado DESC, numero ASC\"; " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('A') ORDER BY estado DESC, numero ASC\"; " +
                             "RETURN consulta; " +
                         "END IF; " +
                     "END IF; " +
@@ -173,24 +169,51 @@ namespace Utilitarios.SACC
                 "DROP function IF EXISTS `func_atencion_plataforma`; " +
                 "CREATE DEFINER =`cessa`@`%` FUNCTION `func_atencion_plataforma`() RETURNS varchar(200) " +
                 "BEGIN " +
-                    "DECLARE contador INT; " +
                     "DECLARE consulta VARCHAR(200); " +
-                    "SET contador := 0; " +
+                    "DECLARE hayMayoresPlataforma BOOLEAN; " +
+                    "DECLARE id_normal INT; " +
+                    "DECLARE id_mayor INT; " +
+
                     "SET consulta := ''; " +
-                    "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('B', 'C') AND estado < 2) THEN " +
-                        "IF(contador >= 0 AND contador < 2) THEN " +
-                            "SET contador = contador + 1; " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND (estado < '2') AND tipo IN ('B', 'C') ORDER BY estado DESC, numero ASC\"; " +
+                    "SET hayMayoresPlataforma = NULL; " +
+
+                    "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND estado IN ('8', '9') ORDER BY estado DESC, numero ASC) THEN " +
+                        "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND estado IN('8', '9') ORDER BY estado DESC, numero ASC\"; " +
+                        "RETURN consulta; " +
+                    "ELSE " +
+                        "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('B', 'C') AND estado < 2) THEN " +
+                            "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('A') AND estado < 2) THEN " +
+                                "SET id_normal = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('A') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "SET id_mayor = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('B', 'C') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "IF(id_mayor < id_normal) THEN " +
+                                    "UPDATE aux_call SET aux_plat = 0 WHERE id = 1; " +
+                                    "SET hayMayoresPlataforma := TRUE; " +
+                                "ELSE " +
+
+                                    "IF((SELECT aux_plat FROM aux_call WHERE id = 1) >= 0 AND(SELECT aux_plat FROM aux_call WHERE id = 1) < 1) THEN " +
+                                        "UPDATE aux_call SET aux_plat = aux_plat + 1 WHERE id = 1; " +
+                                        "SET hayMayoresPlataforma := FALSE; " +
+                                    "ELSE " +
+                                        "UPDATE aux_call SET aux_plat = 0 WHERE id = 1; " +
+                                        "SET hayMayoresPlataforma := TRUE; " +
+                                    "END IF; " +
+                                "END IF; " +
+                            "ELSE " +
+                                "UPDATE aux_call SET aux_plat = 0 WHERE id = 1; " +
+                                "SET hayMayoresPlataforma = TRUE; " +
+                            "END IF; " +
+                        "ELSE " +
+                            "UPDATE aux_call SET aux_plat = 0 WHERE id = 1; " +
+                            "SET hayMayoresPlataforma = TRUE; " +
+                        "END IF; " +
+
+                        "IF(hayMayoresPlataforma = TRUE) THEN " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('B', 'C') ORDER BY estado DESC, numero ASC\"; " +
                             "RETURN consulta; " +
                         "ELSE " +
-                            "SET contador = 0; " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND (estado < '2') AND tipo IN ('A') ORDER BY estado DESC, numero ASC\"; " +
-                            "RETURN consulta; " +
-                        "END IF; " +
-                    "ELSE " +
-                        "SET contador = 0; " +
-                        "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND (estado < '2') AND tipo IN ('A') ORDER BY estado DESC, numero ASC\"; " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('A') ORDER BY estado DESC, numero ASC\"; " +
                         "RETURN consulta; " +
+                        "END IF; " +
                     "END IF; " +
                 "END";
 
@@ -209,56 +232,52 @@ namespace Utilitarios.SACC
         {
             string query =
                 "USE `cessa_bdsacc`; " +
-                "DROP function IF EXISTS `func_atencion_cajas_otro`; " +
-                "CREATE DEFINER =`cessa`@`%` FUNCTION `func_atencion_cajas_otro`() RETURNS varchar(200) " +
+                "DROP function IF EXISTS `func_atencion_cajas`; " +
+                "CREATE DEFINER =`cessa`@`localhost` FUNCTION `func_atencion_cajas`() RETURNS varchar(200) " +
                 "BEGIN " +
-                    "DECLARE contador INT; " +
                     "DECLARE consulta VARCHAR(200); " +
-                    "DECLARE bandera BOOLEAN; " +
-                    "DECLARE hora TIME; " +
-                    "DECLARE hora_normal TIME; " +
                     "DECLARE hayMayoresCajas BOOLEAN; " +
+                    "DECLARE id_normal INT; " +
+                    "DECLARE id_mayor INT; " +
+
+                    "SET consulta := ''; " +
                     "SET hayMayoresCajas = NULL; " +
-                    "SET contador = 0; " +
-                    "SET consulta = \"\"; " +
-                    "SET bandera = FALSE; " +
-                    "SET hora = '00:00:00'; " +
-                    "SET hora_normal = '00:00:00'; " +
+
                     "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND estado IN ('6', '7') ORDER BY estado DESC, numero ASC) THEN " +
                         "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND estado IN('6', '7') ORDER BY estado DESC, numero ASC\"; " +
                         "RETURN consulta; " +
                     "ELSE " +
-                        "IF EXISTS (SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('H', 'I') AND estado < 2) THEN " +
-                            "SET hora = (SELECT hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('H', 'I') AND estado < 2 ORDER BY estado DESC, numero ASC LIMIT 1); " +
-                        "ELSE " +
-                            "SET hora = '23:59:59'; " +
-                        "END IF; " +
-                        "IF (EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('H', 'I') AND estado < 2) AND bandera) THEN " +
-                            "SET contador = 0; " +
-                            "SET bandera = FALSE; " +
-                            "SET hayMayoresCajas = TRUE; " +
-                        "ELSE " +
-                            "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('G') AND estado < 2) THEN " +
-                                "SET hayMayoresCajas = FALSE; " +
-                                "SET contador = contador + 1; " +
-                                "SET hora_normal = (SELECT hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN ('G') AND estado < 2 ORDER BY estado DESC, numero ASC LIMIT 1); " +
-                                "IF (contador = 2 OR (hora < hora_normal)) THEN " +
-                                    "SET hayMayoresCajas = TRUE; " +
-                                    "SET contador = 0; " +
+                        "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('G') AND estado < 2) THEN " +
+                            "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('H', 'I') AND estado < 2) THEN " +
+                                "SET id_mayor = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('H', 'I') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "SET id_normal = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('G') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "IF(id_mayor < id_normal) THEN " +
+                                    "UPDATE aux_call SET aux_cajas = 0 WHERE id = 1; " +
+                                    "SET hayMayoresCajas := TRUE; " +
+                                "ELSE " +
+
+                                    "IF((SELECT aux_cajas FROM aux_call WHERE id = 1) >= 0 AND(SELECT aux_cajas FROM aux_call WHERE id = 1) < 2) THEN " +
+                                        "UPDATE aux_call SET aux_cajas = aux_cajas + 1 WHERE id = 1; " +
+                                        "SET hayMayoresCajas := FALSE; " +
+                                    "ELSE " +
+                                        "UPDATE aux_call SET aux_cajas = 0 WHERE id = 1; " +
+                                        "SET hayMayoresCajas := TRUE; " +
+                                    "END IF; " +
                                 "END IF; " +
                             "ELSE " +
-                                "SET hayMayoresCajas = TRUE; " +
-                                "SET contador = 0; " +
+                                "UPDATE aux_call SET aux_cajas = aux_cajas + 1 WHERE id = 1; " +
+                                "SET hayMayoresCajas := FALSE; " +
                             "END IF; " +
-                            "IF (contador = 2) THEN " +
-                                "SET bandera = TRUE; " +
-                            "END IF; " +
+                        "ELSE " +
+                            "UPDATE aux_call SET aux_cajas = 0 WHERE id = 1; " +
+                            "SET hayMayoresCajas = TRUE; " +
                         "END IF; " +
-                        "IF (hayMayoresCajas = TRUE) THEN " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('H', 'I') ORDER BY estado DESC, numero ASC\"; " +
+
+                        "IF(hayMayoresCajas = TRUE) THEN " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('H', 'I') ORDER BY estado DESC, numero ASC\"; " +
                             "RETURN consulta; " +
                         "ELSE " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('G') ORDER BY estado DESC, numero ASC\"; " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('G') ORDER BY estado DESC, numero ASC\"; " +
                             "RETURN consulta; " +
                         "END IF; " +
                     "END IF; " +
@@ -279,27 +298,54 @@ namespace Utilitarios.SACC
         {
             string query =
                 "USE `cessa_bdsacc`; " +
-                "DROP function IF EXISTS `func_atencion_cajas_otro`; " +
-                "CREATE DEFINER =`cessa`@`%` FUNCTION `func_atencion_cajas_otro`() RETURNS varchar(200) " +
+                "DROP function IF EXISTS `func_atencion_cajas`; " +
+                "CREATE DEFINER =`cessa`@`localhost` FUNCTION `func_atencion_cajas`() RETURNS varchar(200) " +
                 "BEGIN " +
-                    "DECLARE contador INT; " +
                     "DECLARE consulta VARCHAR(200); " +
-                    "SET contador := 0; " +
+                    "DECLARE hayMayoresCajas BOOLEAN; " +
+                    "DECLARE id_normal INT; " +
+                    "DECLARE id_mayor INT; " +
+
                     "SET consulta := ''; " +
-                    "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('H', 'I') AND estado < 2) THEN " +
-                        "IF(contador >= 0 AND contador < 2) THEN " +
-                            "SET contador = contador + 1; " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND (estado < '2') AND tipo IN ('H', 'I') ORDER BY estado DESC, numero ASC\"; " +
+                    "SET hayMayoresCajas = NULL; " +
+
+                    "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND estado IN ('6', '7') ORDER BY estado DESC, numero ASC) THEN " +
+                        "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND estado IN('6', '7') ORDER BY estado DESC, numero ASC\"; " +
+                        "RETURN consulta; " +
+                    "ELSE " +
+                        "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('H', 'I') AND estado < 2) THEN " +
+                            "IF EXISTS(SELECT id, hora_solicitud FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('G') AND estado < 2) THEN " +
+                                "SET id_normal = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('G') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "SET id_mayor = (SELECT id FROM tickets WHERE tickets.fecha_solicitud = CURRENT_DATE AND tipo IN('H', 'I') AND estado< 2 ORDER BY numero ASC LIMIT 1); " +
+                                "IF(id_mayor < id_normal) THEN " +
+                                    "UPDATE aux_call SET aux_cajas = 0 WHERE id = 1; " +
+                                    "SET hayMayoresCajas := TRUE; " +
+                                "ELSE " +
+
+                                    "IF((SELECT aux_cajas FROM aux_call WHERE id = 1) >= 0 AND(SELECT aux_cajas FROM aux_call WHERE id = 1) < 1) THEN " +
+                                        "UPDATE aux_call SET aux_cajas = aux_cajas + 1 WHERE id = 1; " +
+                                        "SET hayMayoresCajas := FALSE; " +
+                                    "ELSE " +
+                                        "UPDATE aux_call SET aux_cajas = 0 WHERE id = 1; " +
+                                        "SET hayMayoresCajas := TRUE; " +
+                                    "END IF; " +
+                                "END IF; " +
+                            "ELSE " +
+                                "UPDATE aux_call SET aux_cajas = 0 WHERE id = 1; " +
+                                "SET hayMayoresCajas = TRUE; " +
+                            "END IF; " +
+                        "ELSE " +
+                            "UPDATE aux_call SET aux_cajas = 0 WHERE id = 1; " +
+                            "SET hayMayoresCajas = TRUE; " +
+                        "END IF; " +
+
+                        "IF(hayMayoresCajas = TRUE) THEN " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('H', 'I') ORDER BY estado DESC, numero ASC\"; " +
                             "RETURN consulta; " +
                         "ELSE " +
-                            "SET contador = 0; " +
-                            "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND (estado < '2') AND tipo IN ('G') ORDER BY estado DESC, numero ASC\"; " +
-                            "RETURN consulta; " +
-                        "END IF; " +
-                    "ELSE " +
-                        "SET contador = 0; " +
-                        "SET consulta = \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND (estado < '2') AND tipo IN ('G') ORDER BY estado DESC, numero ASC\"; " +
+                            "SET consulta:= \"SELECT id, hora_solicitud FROM tickets WHERE fecha_solicitud = CURRENT_DATE AND(estado < '2') AND tipo IN('G') ORDER BY estado DESC, numero ASC\"; " +
                         "RETURN consulta; " +
+                        "END IF; " +
                     "END IF; " +
                 "END";
 

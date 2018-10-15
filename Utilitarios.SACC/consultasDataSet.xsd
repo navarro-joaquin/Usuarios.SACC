@@ -37,6 +37,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ComparativaPlataforma" msprop:Generator_TableClassName="ComparativaPlataformaDataTable" msprop:Generator_TableVarName="tableComparativaPlataforma" msprop:Generator_RowChangedName="ComparativaPlataformaRowChanged" msprop:Generator_TablePropName="ComparativaPlataforma" msprop:Generator_RowDeletingName="ComparativaPlataformaRowDeleting" msprop:Generator_RowChangingName="ComparativaPlataformaRowChanging" msprop:Generator_RowEvHandlerName="ComparativaPlataformaRowChangeEventHandler" msprop:Generator_RowDeletedName="ComparativaPlataformaRowDeleted" msprop:Generator_RowClassName="ComparativaPlataformaRow" msprop:Generator_UserTableName="ComparativaPlataforma" msprop:Generator_RowEvArgName="ComparativaPlataformaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Operador" msprop:Generator_ColumnVarNameInTable="columnOperador" msprop:Generator_ColumnPropNameInRow="Operador" msprop:Generator_ColumnPropNameInTable="OperadorColumn" msprop:Generator_UserColumnName="Operador" type="xs:string" minOccurs="0" />
+              <xs:element name="Ubicacion" msprop:Generator_ColumnVarNameInTable="columnUbicacion" msprop:Generator_ColumnPropNameInRow="Ubicacion" msprop:Generator_ColumnPropNameInTable="UbicacionColumn" msprop:Generator_UserColumnName="Ubicacion" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalAtendidosDia" msprop:Generator_ColumnVarNameInTable="columnTotalAtendidosDia" msprop:Generator_ColumnPropNameInRow="TotalAtendidosDia" msprop:Generator_ColumnPropNameInTable="TotalAtendidosDiaColumn" msprop:Generator_UserColumnName="TotalAtendidosDia" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TiempoPromedio" msprop:Generator_ColumnVarNameInTable="columnTiempoPromedio" msprop:Generator_ColumnPropNameInRow="TiempoPromedio" msprop:Generator_ColumnPropNameInTable="TiempoPromedioColumn" msprop:Generator_UserColumnName="TiempoPromedio" type="xs:duration" minOccurs="0" />
+              <xs:element name="TiempoPromedioTotal" msprop:Generator_ColumnVarNameInTable="columnTiempoPromedioTotal" msprop:Generator_ColumnPropNameInRow="TiempoPromedioTotal" msprop:Generator_ColumnPropNameInTable="TiempoPromedioTotalColumn" msprop:Generator_UserColumnName="TiempoPromedioTotal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

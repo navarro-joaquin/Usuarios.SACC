@@ -87,6 +87,9 @@
     <Compile Include="ClaseFTP.Designer.cs">
       <DependentUpon>ClaseFTP.cs</DependentUpon>
     </Compile>
+    <Compile Include="consultasDataSet.cs">
+      <DependentUpon>consultasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="consultasDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -170,6 +173,18 @@
     <Compile Include="FrmReporte.Designer.cs">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteAtencionCajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteAtencionCajas.Designer.cs">
+      <DependentUpon>FrmReporteAtencionCajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteAtencionPlataforma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteAtencionPlataforma.Designer.cs">
+      <DependentUpon>FrmReporteAtencionPlataforma.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReporteComparativa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +253,12 @@
     <EmbeddedResource Include="FrmReporte.resx">
       <DependentUpon>FrmReporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteAtencionCajas.resx">
+      <DependentUpon>FrmReporteAtencionCajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteAtencionPlataforma.resx">
+      <DependentUpon>FrmReporteAtencionPlataforma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteComparativa.resx">
       <DependentUpon>FrmReporteComparativa.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +282,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reporte.rdlc" />
+    <EmbeddedResource Include="ReporteAtencionCajas.rdlc" />
     <EmbeddedResource Include="ReporteAtencionPlataforma.rdlc" />
     <EmbeddedResource Include="ReporteComparativoAtencion.rdlc" />
     <EmbeddedResource Include="ReporteUsuario.rdlc" />

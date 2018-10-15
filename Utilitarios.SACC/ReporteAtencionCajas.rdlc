@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>b89ce41d-dfd6-4287-b6d3-1da405e9e7b6</rd:DataSourceID>
+      <rd:DataSourceID>3eaa997a-0553-4331-97ea-79a727307827</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -63,7 +63,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Reporte de Tickets Atendidos Plataforma</Value>
+                    <Value>Reporte de Tickets Atendidos Cajas</Value>
                     <Style>
                       <FontFamily>trebuchet MS</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -603,7 +603,6 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>ComparativaPlataforma</DataSetName>
             <Top>1.78181cm</Top>
             <Left>12.5025cm</Left>
             <Height>7.79231cm</Height>
@@ -942,7 +941,7 @@
         <Height>3.76934in</Height>
         <Style />
       </Body>
-      <Width>8.55208in</Width>
+      <Width>8.51042in</Width>
       <Page>
         <PageHeight>21cm</PageHeight>
         <PageWidth>29.7cm</PageWidth>
@@ -975,5 +974,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>7ee6cf4b-c989-4796-962a-6f0e4c6b92d4</rd:ReportID>
+  <rd:ReportID>2dfcab03-375d-4c66-a69d-b54f33a2b9c2</rd:ReportID>
 </Report>
