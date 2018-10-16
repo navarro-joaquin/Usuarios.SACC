@@ -42,6 +42,7 @@
             this.MnuItemReportesAtendidos = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemComparativaAtencion = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemAtencionPlataforma = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuItemAtencionCajas = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuHerramientas = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemConfCorreo = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuItemConfAtencion = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,9 +59,20 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.MnuItemAtencionCajas = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblPlataforma = new System.Windows.Forms.Label();
+            this.lblCantPlat = new System.Windows.Forms.Label();
+            this.lblUsuariosConectados = new System.Windows.Forms.Label();
+            this.lblTicketsPendientes = new System.Windows.Forms.Label();
+            this.pnlInformativo = new System.Windows.Forms.Panel();
+            this.lblTicketPlataforma = new System.Windows.Forms.Label();
+            this.lblCantTicketPlataforma = new System.Windows.Forms.Label();
+            this.lblTicketCajas = new System.Windows.Forms.Label();
+            this.lblCantTicketCajas = new System.Windows.Forms.Label();
+            this.MnuItemHorasPico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.pnlInformativo.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -140,7 +152,8 @@
             this.MnuItemReportesAtendidos,
             this.MnuItemComparativaAtencion,
             this.MnuItemAtencionPlataforma,
-            this.MnuItemAtencionCajas});
+            this.MnuItemAtencionCajas,
+            this.MnuItemHorasPico});
             this.MnuReportes.Name = "MnuReportes";
             this.MnuReportes.Size = new System.Drawing.Size(65, 20);
             this.MnuReportes.Text = "&Reportes";
@@ -166,6 +179,13 @@
             this.MnuItemAtencionPlataforma.Text = "Atención Plataforma";
             this.MnuItemAtencionPlataforma.Click += new System.EventHandler(this.MnuItemAtencionPlataforma_Click);
             // 
+            // MnuItemAtencionCajas
+            // 
+            this.MnuItemAtencionCajas.Name = "MnuItemAtencionCajas";
+            this.MnuItemAtencionCajas.Size = new System.Drawing.Size(193, 22);
+            this.MnuItemAtencionCajas.Text = "Atención Cajas";
+            this.MnuItemAtencionCajas.Click += new System.EventHandler(this.MnuItemAtencionCajas_Click);
+            // 
             // MnuHerramientas
             // 
             this.MnuHerramientas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -178,14 +198,14 @@
             // MnuItemConfCorreo
             // 
             this.MnuItemConfCorreo.Name = "MnuItemConfCorreo";
-            this.MnuItemConfCorreo.Size = new System.Drawing.Size(180, 22);
+            this.MnuItemConfCorreo.Size = new System.Drawing.Size(154, 22);
             this.MnuItemConfCorreo.Text = "Conf. Correo";
             this.MnuItemConfCorreo.Click += new System.EventHandler(this.MnuItemConfCorreo_Click);
             // 
             // MnuItemConfAtencion
             // 
             this.MnuItemConfAtencion.Name = "MnuItemConfAtencion";
-            this.MnuItemConfAtencion.Size = new System.Drawing.Size(180, 22);
+            this.MnuItemConfAtencion.Size = new System.Drawing.Size(154, 22);
             this.MnuItemConfAtencion.Text = "Conf. Atención";
             this.MnuItemConfAtencion.Click += new System.EventHandler(this.MnuItemConfAtencion_Click);
             // 
@@ -287,18 +307,135 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // MnuItemAtencionCajas
+            // timer
             // 
-            this.MnuItemAtencionCajas.Name = "MnuItemAtencionCajas";
-            this.MnuItemAtencionCajas.Size = new System.Drawing.Size(193, 22);
-            this.MnuItemAtencionCajas.Text = "Atención Cajas";
-            this.MnuItemAtencionCajas.Click += new System.EventHandler(this.MnuItemAtencionCajas_Click);
+            this.timer.Enabled = true;
+            this.timer.Interval = 2000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // lblPlataforma
+            // 
+            this.lblPlataforma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPlataforma.BackColor = System.Drawing.Color.Transparent;
+            this.lblPlataforma.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlataforma.Location = new System.Drawing.Point(3, 33);
+            this.lblPlataforma.Name = "lblPlataforma";
+            this.lblPlataforma.Size = new System.Drawing.Size(104, 44);
+            this.lblPlataforma.TabIndex = 4;
+            this.lblPlataforma.Text = "PLATAFORMA:";
+            // 
+            // lblCantPlat
+            // 
+            this.lblCantPlat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCantPlat.BackColor = System.Drawing.Color.Transparent;
+            this.lblCantPlat.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantPlat.Location = new System.Drawing.Point(113, 33);
+            this.lblCantPlat.Name = "lblCantPlat";
+            this.lblCantPlat.Size = new System.Drawing.Size(81, 44);
+            this.lblCantPlat.TabIndex = 6;
+            this.lblCantPlat.Text = "2 Usuarios";
+            // 
+            // lblUsuariosConectados
+            // 
+            this.lblUsuariosConectados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsuariosConectados.AutoSize = true;
+            this.lblUsuariosConectados.BackColor = System.Drawing.Color.Transparent;
+            this.lblUsuariosConectados.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuariosConectados.Location = new System.Drawing.Point(3, 11);
+            this.lblUsuariosConectados.Name = "lblUsuariosConectados";
+            this.lblUsuariosConectados.Size = new System.Drawing.Size(161, 22);
+            this.lblUsuariosConectados.TabIndex = 9;
+            this.lblUsuariosConectados.Text = "Usuarios Conectados:";
+            // 
+            // lblTicketsPendientes
+            // 
+            this.lblTicketsPendientes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTicketsPendientes.AutoSize = true;
+            this.lblTicketsPendientes.BackColor = System.Drawing.Color.Transparent;
+            this.lblTicketsPendientes.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTicketsPendientes.Location = new System.Drawing.Point(3, 77);
+            this.lblTicketsPendientes.Name = "lblTicketsPendientes";
+            this.lblTicketsPendientes.Size = new System.Drawing.Size(124, 22);
+            this.lblTicketsPendientes.TabIndex = 10;
+            this.lblTicketsPendientes.Text = "Tickets en Cola:";
+            // 
+            // pnlInformativo
+            // 
+            this.pnlInformativo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlInformativo.Controls.Add(this.lblCantTicketCajas);
+            this.pnlInformativo.Controls.Add(this.lblTicketCajas);
+            this.pnlInformativo.Controls.Add(this.lblCantTicketPlataforma);
+            this.pnlInformativo.Controls.Add(this.lblTicketPlataforma);
+            this.pnlInformativo.Controls.Add(this.lblUsuariosConectados);
+            this.pnlInformativo.Controls.Add(this.lblTicketsPendientes);
+            this.pnlInformativo.Controls.Add(this.lblPlataforma);
+            this.pnlInformativo.Controls.Add(this.lblCantPlat);
+            this.pnlInformativo.Location = new System.Drawing.Point(606, 52);
+            this.pnlInformativo.Name = "pnlInformativo";
+            this.pnlInformativo.Size = new System.Drawing.Size(213, 154);
+            this.pnlInformativo.TabIndex = 11;
+            // 
+            // lblTicketPlataforma
+            // 
+            this.lblTicketPlataforma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTicketPlataforma.AutoSize = true;
+            this.lblTicketPlataforma.BackColor = System.Drawing.Color.Transparent;
+            this.lblTicketPlataforma.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTicketPlataforma.Location = new System.Drawing.Point(3, 99);
+            this.lblTicketPlataforma.Name = "lblTicketPlataforma";
+            this.lblTicketPlataforma.Size = new System.Drawing.Size(104, 22);
+            this.lblTicketPlataforma.TabIndex = 11;
+            this.lblTicketPlataforma.Text = "PLATAFORMA:";
+            // 
+            // lblCantTicketPlataforma
+            // 
+            this.lblCantTicketPlataforma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCantTicketPlataforma.AutoSize = true;
+            this.lblCantTicketPlataforma.BackColor = System.Drawing.Color.Transparent;
+            this.lblCantTicketPlataforma.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantTicketPlataforma.Location = new System.Drawing.Point(113, 99);
+            this.lblCantTicketPlataforma.Name = "lblCantTicketPlataforma";
+            this.lblCantTicketPlataforma.Size = new System.Drawing.Size(73, 22);
+            this.lblCantTicketPlataforma.TabIndex = 12;
+            this.lblCantTicketPlataforma.Text = "2 Tickets";
+            // 
+            // lblTicketCajas
+            // 
+            this.lblTicketCajas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTicketCajas.AutoSize = true;
+            this.lblTicketCajas.BackColor = System.Drawing.Color.Transparent;
+            this.lblTicketCajas.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTicketCajas.Location = new System.Drawing.Point(3, 121);
+            this.lblTicketCajas.Name = "lblTicketCajas";
+            this.lblTicketCajas.Size = new System.Drawing.Size(60, 22);
+            this.lblTicketCajas.TabIndex = 13;
+            this.lblTicketCajas.Text = "CAJAS:";
+            // 
+            // lblCantTicketCajas
+            // 
+            this.lblCantTicketCajas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCantTicketCajas.AutoSize = true;
+            this.lblCantTicketCajas.BackColor = System.Drawing.Color.Transparent;
+            this.lblCantTicketCajas.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantTicketCajas.Location = new System.Drawing.Point(113, 121);
+            this.lblCantTicketCajas.Name = "lblCantTicketCajas";
+            this.lblCantTicketCajas.Size = new System.Drawing.Size(73, 22);
+            this.lblCantTicketCajas.TabIndex = 14;
+            this.lblCantTicketCajas.Text = "2 Tickets";
+            // 
+            // MnuItemHorasPico
+            // 
+            this.MnuItemHorasPico.Name = "MnuItemHorasPico";
+            this.MnuItemHorasPico.Size = new System.Drawing.Size(193, 22);
+            this.MnuItemHorasPico.Text = "Horas Pico";
+            this.MnuItemHorasPico.Click += new System.EventHandler(this.MnuItemHorasPico_Click);
             // 
             // FrmPrincipalMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 597);
+            this.Controls.Add(this.pnlInformativo);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -312,6 +449,8 @@
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.pnlInformativo.ResumeLayout(false);
+            this.pnlInformativo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,6 +487,17 @@
         private System.Windows.Forms.ToolStripMenuItem MnuItemConfAtencion;
         private System.Windows.Forms.ToolStripMenuItem MnuItemAtencionPlataforma;
         private System.Windows.Forms.ToolStripMenuItem MnuItemAtencionCajas;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Label lblPlataforma;
+        private System.Windows.Forms.Label lblCantPlat;
+        private System.Windows.Forms.Label lblUsuariosConectados;
+        private System.Windows.Forms.Label lblTicketsPendientes;
+        private System.Windows.Forms.Panel pnlInformativo;
+        private System.Windows.Forms.Label lblCantTicketPlataforma;
+        private System.Windows.Forms.Label lblTicketPlataforma;
+        private System.Windows.Forms.Label lblCantTicketCajas;
+        private System.Windows.Forms.Label lblTicketCajas;
+        private System.Windows.Forms.ToolStripMenuItem MnuItemHorasPico;
     }
 }
 

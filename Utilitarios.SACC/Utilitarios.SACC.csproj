@@ -95,6 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>consultasDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBMySQL.cs" />
     <Compile Include="FrmAvisos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +192,12 @@
     <Compile Include="FrmReporteComparativa.Designer.cs">
       <DependentUpon>FrmReporteComparativa.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteHorasPico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteHorasPico.Designer.cs">
+      <DependentUpon>FrmReporteHorasPico.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReporteUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +269,9 @@
     <EmbeddedResource Include="FrmReporteComparativa.resx">
       <DependentUpon>FrmReporteComparativa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteHorasPico.resx">
+      <DependentUpon>FrmReporteHorasPico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteUsuario.resx">
       <DependentUpon>FrmReporteUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +295,7 @@
     <EmbeddedResource Include="ReporteAtencionCajas.rdlc" />
     <EmbeddedResource Include="ReporteAtencionPlataforma.rdlc" />
     <EmbeddedResource Include="ReporteComparativoAtencion.rdlc" />
+    <EmbeddedResource Include="ReporteHorasPico.rdlc" />
     <EmbeddedResource Include="ReporteUsuario.rdlc" />
     <None Include="app.config">
       <SubType>Designer</SubType>

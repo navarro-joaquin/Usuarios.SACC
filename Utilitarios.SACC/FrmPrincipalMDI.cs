@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Utilitarios.SACC
     public partial class FrmPrincipalMDI : Form
     {
         int id_usuario;
+
+        DBMySQL dbMySQL = new DBMySQL();
+        
 
         public FrmPrincipalMDI(string cargo, int id)
         {
@@ -37,6 +41,84 @@ namespace Utilitarios.SACC
             }
 
             id_usuario = id;
+        }
+
+        //Cargar datos de usuarios conectados y tickets en cola
+        private void CargarUsuarios()
+        {
+            string query = 
+                "SELECT COUNT(usuarios_log.id) AS 'Usuarios conectados', usuarios.rol AS 'Rol' FROM usuarios_log " +
+                "INNER JOIN usuarios " +
+                "ON usuarios_log.login = usuarios.login " +
+                "WHERE usuarios_log.estado = 'C' " +
+                "GROUP BY usuarios.rol; ";
+
+            using (MySqlDataReader dataReader = dbMySQL.Seleccionar(query))
+            {
+                string Rol = "";
+                string UsuariosConectados = "";
+                string Cantidad = "";
+                lblCantPlat.ResetText();
+                lblPlataforma.ResetText();
+                while (dataReader.Read())
+                {
+                    Rol = dataReader.GetString(1) + ": ";
+                    UsuariosConectados = dataReader.GetString(0) + " ";
+                    if (dataReader.GetString(0).Equals("1"))
+                    {
+                        Cantidad = "Usuario";
+                    }
+                    else
+                    {
+                        Cantidad = "Usuarios";
+                    }
+                    lblPlataforma.Text += Rol + "\n";
+                    lblCantPlat.Text += UsuariosConectados + Cantidad + "\n" ;
+                }
+                dataReader.Close();
+            }
+        }
+
+        private void TicketsPlataforma()
+        {
+            string query = 
+                "SELECT COUNT(id) AS 'Tickets pendientes' " +
+                "FROM tickets " +
+                "WHERE fecha_solicitud = CURRENT_DATE " +
+                "AND tipo IN ('A', 'B', 'C') AND " +
+                "estado < 2 " +
+                "ORDER BY id DESC;";
+            using (MySqlDataReader dataReader = dbMySQL.Seleccionar(query))
+            {
+                string CantidadTicketsPlataforma = "";
+                if (dataReader.Read())
+                {
+                    CantidadTicketsPlataforma = dataReader.GetString(0);
+                    lblCantTicketPlataforma.Text = CantidadTicketsPlataforma + " Tickets";
+                    dataReader.Close();
+                }
+            }
+        }
+
+        private void TicketsCajas()
+        {
+            string query =
+                "SELECT COUNT(id) AS 'Tickets pendientes' " +
+                "FROM tickets " +
+                "WHERE fecha_solicitud = CURRENT_DATE " +
+                "AND tipo IN ('G', 'H', 'I') AND " +
+                "estado < 2 " +
+                "ORDER BY id DESC;";
+            using (MySqlDataReader dataReader = dbMySQL.Seleccionar(query))
+            {
+                string CantidadTicketsCajas = "";
+                if (dataReader.Read())
+                {
+                    CantidadTicketsCajas = dataReader.GetString(0);
+                    lblCantTicketCajas.Text = CantidadTicketsCajas + " Tickets";
+                    dataReader.Close();
+                }
+            }
         }
 
         //Funcionalidad de los elementos en menú
@@ -144,6 +226,20 @@ namespace Utilitarios.SACC
         private void MnuItemAtencionCajas_Click(object sender, EventArgs e)
         {
             FrmReporteAtencionCajas frm = new FrmReporteAtencionCajas();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            CargarUsuarios();
+            TicketsPlataforma();
+            TicketsCajas();
+        }
+
+        private void MnuItemHorasPico_Click(object sender, EventArgs e)
+        {
+            FrmReporteHorasPico frm = new FrmReporteHorasPico();
             frm.MdiParent = this;
             frm.Show();
         }
